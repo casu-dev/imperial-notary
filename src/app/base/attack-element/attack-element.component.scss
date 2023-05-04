@@ -1,0 +1,20 @@
+:host {
+  display: flex;
+  gap: 4px;
+  width: 100%;
+}
+
+.label-card {
+  width: 50%;
+  .card {
+    justify-content: start !important;
+  }
+}
+
+.hit-card {
+  width: 15%;
+}
+
+.dmg-card {
+  width: 35%;
+}

@@ -1,0 +1,15 @@
+.card-name {
+  display: flex;
+  font-size: 11px;
+}
+
+.name-card {
+  display: flex;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.15);
+  justify-content: start;
+
+  > span {
+    padding: 0 1em;
+  }
+}

@@ -8,11 +8,20 @@ import {MatTabsModule} from "@angular/material/tabs";
 import {MatButtonModule} from "@angular/material/button";
 import {MatInputModule} from "@angular/material/input";
 import { HealthBarComponent } from './base/health-bar/health-bar.component';
+import { StatCardComponent } from './base/stat-card/stat-card.component';
+import {MatCardModule} from "@angular/material/card";
+import {MatGridListModule} from "@angular/material/grid-list";
+import { AttackElementComponent } from './base/attack-element/attack-element.component';
+import {MatListModule} from "@angular/material/list";
+import { LabelCardComponent } from './base/label-card/label-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HealthBarComponent
+    HealthBarComponent,
+    StatCardComponent,
+    AttackElementComponent,
+    LabelCardComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +29,10 @@ import { HealthBarComponent } from './base/health-bar/health-bar.component';
     MatIconModule,
     MatTabsModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
+    MatCardModule,
+    MatGridListModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

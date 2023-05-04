@@ -1,0 +1,14 @@
+app-stat-card {
+  flex-grow: 1;
+}
+
+.panel {
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.attack-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
