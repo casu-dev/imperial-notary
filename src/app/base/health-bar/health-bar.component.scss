@@ -1,0 +1,22 @@
+.bar-container {
+  background-color: darkred;
+  // border: 1px solid black;
+  margin: 10px;
+  position: relative;
+  height: 20px;
+}
+
+.bar {
+  height: 100%;
+  background-color: forestgreen;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.text-display {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  color: white;
+}
