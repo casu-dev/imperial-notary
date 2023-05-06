@@ -16,6 +16,10 @@ import {MatListModule} from "@angular/material/list";
 import {LabelCardComponent} from './base/label-card/label-card.component';
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {NavBarComponent} from './base/nav-bar/nav-bar.component';
+import {NavBarSpacerComponent} from './base/nav-bar/nav-bar-spacer/nav-bar-spacer.component';
+import {BattleComponent} from './tabs/battle/battle.component';
+import {SkillsComponent} from './tabs/skills/skills.component';
+import {InventoryComponent} from './tabs/inventory/inventory.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,11 @@ import {NavBarComponent} from './base/nav-bar/nav-bar.component';
     StatCardComponent,
     AttackElementComponent,
     LabelCardComponent,
-    NavBarComponent
+    NavBarComponent,
+    NavBarSpacerComponent,
+    BattleComponent,
+    SkillsComponent,
+    InventoryComponent
   ],
   imports: [
     BrowserModule,

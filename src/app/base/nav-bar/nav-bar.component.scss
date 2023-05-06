@@ -1,3 +1,5 @@
+@import "src/assets/_variables.scss";
+
 :host {
   position: fixed;
   bottom: 0;
@@ -6,8 +8,9 @@
 }
 
 .nav-panel {
+  height: $nav-bar-height;
   display: flex;
   justify-content: space-around;
-  padding: 1em;
+  align-items: center;
   background-color: rgba(255, 255, 255, 0.13);
 }

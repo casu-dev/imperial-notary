@@ -1,0 +1,6 @@
+@import "src/assets/_variables.scss";
+
+:host {
+  height: $nav-bar-height;
+  display: block;
+}
