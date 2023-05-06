@@ -21,6 +21,10 @@ import {BattleComponent} from './tabs/battle/battle.component';
 import {SkillsComponent} from './tabs/skills/skills.component';
 import {InventoryComponent} from './tabs/inventory/inventory.component';
 import {ServiceWorkerModule} from '@angular/service-worker';
+import {HealthDialogComponent} from './base/dialog/health-dialog/health-dialog.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import {FormsModule} from "@angular/forms";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -33,10 +37,12 @@ import {ServiceWorkerModule} from '@angular/service-worker';
     NavBarSpacerComponent,
     BattleComponent,
     SkillsComponent,
-    InventoryComponent
+    InventoryComponent,
+    HealthDialogComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
     MatTabsModule,
@@ -51,7 +57,9 @@ import {ServiceWorkerModule} from '@angular/service-worker';
       // Register the ServiceWorker as soon as the application is stable
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
-    })
+    }),
+    MatDialogModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

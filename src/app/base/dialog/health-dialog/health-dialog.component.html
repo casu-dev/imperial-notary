@@ -1,0 +1,12 @@
+<div mat-dialog-content>
+  <p>Change your health</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Damage / Heal</mat-label>
+    <input #input autofocus inputmode="numeric" matInput pattern="\d*" type="text">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-dialog-close mat-raised-button>Cancel</button>
+  <button [matDialogClose]="{value: input.value, heal: false}" class="dmg-btn" mat-raised-button>Damage</button>
+  <button [matDialogClose]="{value: input.value, heal: true}" class="heal-btn" mat-raised-button>Heal</button>
+</div>

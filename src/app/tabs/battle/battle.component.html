@@ -1,6 +1,6 @@
 <h3>Health</h3>
 <p>
-  <app-health-bar [currentHealth]="2" [maxHealth]="15"></app-health-bar>
+  <app-health-bar (click)="onHealthClick()" [currentHealth]="debugHealth" [maxHealth]="15"></app-health-bar>
 </p>
 <h3>Stats</h3>
 <mat-grid-list cols="3" gutterSize="4px" rowHeight="40px">

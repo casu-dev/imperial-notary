@@ -1,0 +1,17 @@
+:host {
+  width: 100%;
+}
+
+.dmg-btn {
+  background-color: darkred !important;
+}
+
+.heal-btn {
+  background-color: darkgreen !important;
+}
+
+mat-dialog-actions {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
