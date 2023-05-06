@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import {isDevMode, NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
 import {AppComponent} from './app.component';
@@ -20,6 +20,7 @@ import {NavBarSpacerComponent} from './base/nav-bar/nav-bar-spacer/nav-bar-space
 import {BattleComponent} from './tabs/battle/battle.component';
 import {SkillsComponent} from './tabs/skills/skills.component';
 import {InventoryComponent} from './tabs/inventory/inventory.component';
+import {ServiceWorkerModule} from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,13 @@ import {InventoryComponent} from './tabs/inventory/inventory.component';
     MatCardModule,
     MatGridListModule,
     MatListModule,
-    MatSidenavModule
+    MatSidenavModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
