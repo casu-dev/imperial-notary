@@ -15,6 +15,7 @@ import {AttackElementComponent} from './base/attack-element/attack-element.compo
 import {MatListModule} from "@angular/material/list";
 import {LabelCardComponent} from './base/label-card/label-card.component';
 import {MatSidenavModule} from "@angular/material/sidenav";
+import {NavBarComponent} from './base/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {MatSidenavModule} from "@angular/material/sidenav";
     HealthBarComponent,
     StatCardComponent,
     AttackElementComponent,
-    LabelCardComponent
+    LabelCardComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
