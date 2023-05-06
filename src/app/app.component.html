@@ -1,38 +1,41 @@
-<mat-toolbar color="primary">
-</mat-toolbar>
+<mat-sidenav-container>
+  <mat-toolbar color="primary">
+    <h2>Thori Stahlfaust</h2>
+  </mat-toolbar>
 
-<div class="panel">
-  <h3>Health</h3>
-  <p>
-    <app-health-bar [currentHealth]="2" [maxHealth]="15"></app-health-bar>
-  </p>
-  <h3>Stats</h3>
-  <mat-grid-list cols="3" rowHeight="50px" gutterSize="4px">
-    <mat-grid-tile>
-      <app-stat-card name="Weapon">47</app-stat-card>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <app-stat-card name="Ballistic">30</app-stat-card>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <app-stat-card name="Attacks">1</app-stat-card>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <app-stat-card name="Movement">3 m</app-stat-card>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <app-stat-card name="Charge Attack">6 m</app-stat-card>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <app-stat-card name="Dash">9 m</app-stat-card>
-    </mat-grid-tile>
-  </mat-grid-list>
+  <div class="panel">
+    <h3>Health</h3>
+    <p>
+      <app-health-bar [currentHealth]="2" [maxHealth]="15"></app-health-bar>
+    </p>
+    <h3>Stats</h3>
+    <mat-grid-list cols="3" gutterSize="4px" rowHeight="40px">
+      <mat-grid-tile>
+        <app-stat-card name="Weapon">47</app-stat-card>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <app-stat-card name="Ballistic">30</app-stat-card>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <app-stat-card name="Attacks">1</app-stat-card>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <app-stat-card name="Movement">3 m</app-stat-card>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <app-stat-card name="Charge Attack">6 m</app-stat-card>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <app-stat-card name="Dash">9 m</app-stat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
 
-  <h3>Attacks</h3>
+    <h3>Weapons</h3>
 
-  <div class="attack-list">
-    <app-attack-element name="Hammer" hit="47" damage="1d10 + 5" [displayLabel]="true"></app-attack-element>
-    <app-attack-element name="ASDASD Hammer" hit="47" damage="1d10"></app-attack-element>
+    <div class="attack-list">
+      <app-attack-element [displayLabel]="true" damage="1d10 + 5" hit="47" name="Hammer"></app-attack-element>
+      <app-attack-element damage="1d10" hit="47" name="ASDASD Hammer"></app-attack-element>
+    </div>
+
   </div>
-
-</div>
+</mat-sidenav-container>

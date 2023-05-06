@@ -4,6 +4,7 @@ app-stat-card {
 
 .panel {
   margin: 0 auto;
+  padding: 0 0.5rem;
   max-width: 500px;
 }
 
@@ -11,4 +12,8 @@ app-stat-card {
   display: flex;
   flex-direction: column;
   gap: 4px;
+}
+
+mat-sidenav-container {
+  height: 100%;
 }

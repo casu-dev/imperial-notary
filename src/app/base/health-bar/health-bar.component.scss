@@ -1,9 +1,8 @@
 .bar-container {
   background-color: darkred;
-  // border: 1px solid black;
-  margin: 10px;
   position: relative;
-  height: 20px;
+  height: 25px;
+  border-radius: 2px;
 }
 
 .bar {
@@ -12,11 +11,14 @@
   position: absolute;
   top: 0;
   left: 0;
+  border-radius: 2px;
 }
 
 .text-display {
   position: absolute;
   width: 100%;
-  text-align: center;
-  color: white;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -1,4 +1,4 @@
-.card-name {
+.card-title {
   display: flex;
   font-size: 11px;
 }
@@ -6,10 +6,11 @@
 .name-card {
   display: flex;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: rgba(0, 0, 0, 0.53);
   justify-content: start;
+  border-radius: 2px;
 
   > span {
-    padding: 0 1em;
+    padding: 0 0.5em;
   }
 }
