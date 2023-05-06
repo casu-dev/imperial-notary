@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 
 @Component({
   selector: 'app-nav-bar',
@@ -6,5 +6,7 @@ import {Component} from '@angular/core';
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent {
+
+  @Output() select = new EventEmitter<string>();
 
 }

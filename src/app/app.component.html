@@ -4,52 +4,10 @@
   </mat-toolbar>
 
   <div class="panel">
-    <h3>Health</h3>
-    <p>
-      <app-health-bar [currentHealth]="2" [maxHealth]="15"></app-health-bar>
-    </p>
-    <h3>Stats</h3>
-    <mat-grid-list cols="3" gutterSize="4px" rowHeight="40px">
-      <mat-grid-tile>
-        <app-stat-card name="Weapon">47</app-stat-card>
-      </mat-grid-tile>
-      <mat-grid-tile>
-        <app-stat-card name="Ballistic">30</app-stat-card>
-      </mat-grid-tile>
-      <mat-grid-tile>
-        <app-stat-card name="Attacks">1</app-stat-card>
-      </mat-grid-tile>
-      <mat-grid-tile>
-        <app-stat-card name="Movement">3 m</app-stat-card>
-      </mat-grid-tile>
-      <mat-grid-tile>
-        <app-stat-card name="Charge Attack">6 m</app-stat-card>
-      </mat-grid-tile>
-      <mat-grid-tile>
-        <app-stat-card name="Dash">9 m</app-stat-card>
-      </mat-grid-tile>
-    </mat-grid-list>
-
-    <h3>Weapons</h3>
-
-    <div class="attack-list">
-      <app-attack-element [displayLabel]="true" damage="1d10 + 5" hit="47" name="Hammer"></app-attack-element>
-      <app-attack-element damage="1d10" hit="47" name="ASDASD Hammer"></app-attack-element>
-      <app-attack-element damage="1d10" hit="47" name="ASDASD Hammer"></app-attack-element>
-      <app-attack-element damage="1d10" hit="47" name="ASDASD Hammer"></app-attack-element>
-      <app-attack-element damage="1d10" hit="47" name="ASDASD Hammer"></app-attack-element>
-      <app-attack-element damage="1d10" hit="47" name="ASDASD Hammer"></app-attack-element>
-      <app-attack-element damage="1d10" hit="47" name="ASDASD Hammer"></app-attack-element>
-      <app-attack-element damage="1d10" hit="47" name="ASDASD Hammer"></app-attack-element>
-      <app-attack-element damage="1d10" hit="47" name="ASDASD Hammer"></app-attack-element>
-      <app-attack-element damage="1d10" hit="47" name="ASDASD Hammer"></app-attack-element>
-      <app-attack-element damage="1d10" hit="47" name="ASDASD Hammer"></app-attack-element>
-
-
-    </div>
-
+    <app-battle *ngIf="selectedPage === 'battle'"></app-battle>
+    <app-skills *ngIf="selectedPage === 'skill'"></app-skills>
+    <app-inventory *ngIf="selectedPage === 'inv'"></app-inventory>
   </div>
 
-  <app-nav-bar></app-nav-bar>
-  <app-nav-bar-spacer></app-nav-bar-spacer>
+  <app-nav-bar (select)="selectedPage = $event"></app-nav-bar>
 </mat-sidenav-container>

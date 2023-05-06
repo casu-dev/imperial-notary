@@ -1,0 +1,9 @@
+.attack-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+app-stat-card {
+  flex-grow: 1;
+}
