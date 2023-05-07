@@ -1,6 +1,6 @@
 @import "src/assets/_variables.scss";
 
 :host {
-  height: $nav-bar-height;
+  height: $nav-bar-height + 0.5rem;
   display: block;
 }

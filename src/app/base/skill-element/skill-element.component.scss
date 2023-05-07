@@ -1,0 +1,14 @@
+:host {
+  display: flex;
+  gap: 4px;
+  width: 100%;
+}
+
+.stat-card {
+  width: 12%;
+  min-width: 27px;
+}
+
+.label-card {
+  flex-grow: 1;
+}

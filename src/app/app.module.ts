@@ -25,6 +25,7 @@ import {HealthDialogComponent} from './base/dialog/health-dialog/health-dialog.c
 import {MatDialogModule} from "@angular/material/dialog";
 import {FormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {SkillElementComponent} from './base/skill-element/skill-element.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     BattleComponent,
     SkillsComponent,
     InventoryComponent,
-    HealthDialogComponent
+    HealthDialogComponent,
+    SkillElementComponent
   ],
   imports: [
     BrowserModule,
