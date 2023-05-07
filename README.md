@@ -2,6 +2,9 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0.
 
+`ng build --configuration production --base-href "https://casu-dev.github.io/imperial-notary/"`
+`npx angular-cli-ghpages --dir=dist/imperial-notary`
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
