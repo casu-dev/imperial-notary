@@ -27,6 +27,7 @@ import {FormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {SkillElementComponent} from './base/skill-element/skill-element.component';
 import {AppRoutingModule} from './app-routing.module';
+import {StatElementComponent} from './base/stat-element/stat-element.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import {AppRoutingModule} from './app-routing.module';
     SkillsComponent,
     InventoryComponent,
     HealthDialogComponent,
-    SkillElementComponent
+    SkillElementComponent,
+    StatElementComponent
   ],
   imports: [
     BrowserModule,

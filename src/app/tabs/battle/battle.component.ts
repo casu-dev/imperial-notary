@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
 import {HealthDialogComponent} from "../../base/dialog/health-dialog/health-dialog.component";
 import {HealDialogResult} from "../../base/types";
+import {CharacterService} from "../../base/service/character.service";
 
 @Component({
   selector: 'app-battle',
@@ -12,7 +13,7 @@ export class BattleComponent {
 
   debugHealth = 2;
 
-  constructor(public dialog: MatDialog) {
+  constructor(private dialog: MatDialog, public charService: CharacterService) {
   }
 
   onHealthClick() {

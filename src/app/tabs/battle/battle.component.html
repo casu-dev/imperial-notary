@@ -3,9 +3,9 @@
   <app-health-bar (click)="onHealthClick()" [currentHealth]="debugHealth" [maxHealth]="15"></app-health-bar>
 </p>
 <h3>Stats</h3>
-<mat-grid-list cols="3" gutterSize="4px" rowHeight="40px">
+<mat-grid-list cols="3" gutterSize="4px" rowHeight="45px">
   <mat-grid-tile>
-    <app-stat-card name="Weapon">47</app-stat-card>
+    <app-stat-card name="Weapon">{{ charService.selectedChar.skill.weapon }}</app-stat-card>
   </mat-grid-tile>
   <mat-grid-tile>
     <app-stat-card name="Ballistic">30</app-stat-card>
@@ -21,6 +21,9 @@
   </mat-grid-tile>
   <mat-grid-tile>
     <app-stat-card name="Dash">9 m</app-stat-card>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <app-stat-card name="Fate Points">1</app-stat-card>
   </mat-grid-tile>
 </mat-grid-list>
 
