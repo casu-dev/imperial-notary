@@ -1,10 +1,13 @@
 <h3>Health</h3>
 <p>
-  <app-health-bar (click)="onHealthClick()" [currentHealth]="debugHealth" [maxHealth]="15"></app-health-bar>
+  <app-health-bar (click)="onHealthClick()" [currentHealth]="charService.selectedChar.currentHealth"
+                  [maxHealth]="this.charService.finalWounds">
+
+  </app-health-bar>
 </p>
 <h3>Stats</h3>
 <mat-grid-list cols="3" gutterSize="4px" rowHeight="45px">
-  <mat-grid-tile *ngFor="let tracker of charService.selectedChar.trackers; index as i; first as isFirst">
+  <mat-grid-tile *ngFor="let tracker of charService.selectedChar.trackers;">
     <app-stat-card [name]="tracker.name">{{tracker.value}}</app-stat-card>
   </mat-grid-tile>
 </mat-grid-list>
@@ -12,8 +15,7 @@
 <h3>Weapons</h3>
 
 <div class="attack-list">
-  <app-attack-element [displayLabel]="true" damage="1d10 + 5" hit="47" name="1H Hammer"></app-attack-element>
-  <app-attack-element damage="1d10" hit="47" name="2H Hammer"></app-attack-element>
-  <app-attack-element damage="1d10" hit="47" name="Schild"></app-attack-element>
-
+  <app-attack-element *ngFor="let w of charService.selectedChar.weapons; first as isFirst"
+                      [damage]="w.damage" [displayLabel]="isFirst" [hit]="w.hit" [name]="w.name">
+  </app-attack-element>
 </div>

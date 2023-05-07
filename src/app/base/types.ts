@@ -30,19 +30,21 @@ export interface CharacterStats {
   career: string;
   expUsed: number;
   expFree: number;
-
   currentHealth: number;
   currentFate: number;
-
   skill: SkillStats;
-
   mods: SkillStats;
-
   trackers: Tracker[];
-
+  weapons: Weapon[];
 }
 
 export interface Tracker {
   name: string;
   value: string;
+}
+
+export interface Weapon {
+  name: string;
+  hit: string;
+  damage: string;
 }

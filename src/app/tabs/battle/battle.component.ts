@@ -22,10 +22,11 @@ export class BattleComponent {
       if (Number.isNaN(parseInt(res.value))) {
         return;
       }
+      let curr = this.charService.selectedChar.currentHealth;
       if (res.heal) {
-        this.debugHealth += parseInt(res.value)
+        this.charService.selectedChar.currentHealth = Math.min(Math.max(curr + parseInt(res.value), 0), this.charService.finalWounds)
       } else {
-        this.debugHealth -= parseInt(res.value)
+        this.charService.selectedChar.currentHealth = Math.min(Math.max(curr - parseInt(res.value), 0), this.charService.finalWounds)
       }
     })
   }
