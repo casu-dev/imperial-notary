@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {CharacterStats, SkillStats} from "../types";
+import {CharacterStats, SkillStats, Tracker} from "../types";
 
 const CHAR_SAVE_KEY = 'charStats'
 
@@ -31,6 +31,25 @@ export class CharacterService {
       movement: 3,
       fate: 2,
     } as SkillStats,
+    mods: {
+      weapon: 0,
+      ballistic: 0,
+      strength: 0,
+      toughness: 0,
+      agility: 0,
+      intelligence: 0,
+      willpower: 0,
+      fellowship: 0,
+      attacks: 0,
+      wounds: 0,
+      movement: 0,
+      fate: 0,
+    } as SkillStats,
+    trackers: [
+      {name: 'Movement', value: '3 m'},
+      {name: 'Charge Attack', value: '6 m'},
+      {name: 'Dash', value: '9 m'},
+    ] as Tracker[],
   } as CharacterStats;
 
   public saveCharacter(): void {
@@ -42,15 +61,6 @@ export class CharacterService {
     if (item) {
       this.selectedChar = JSON.parse(item);
     }
-
-    let asdf: any;
-  }
-
-}
-
-export class Character {
-
-  constructor(private stats: CharacterStats) {
   }
 
 }

@@ -4,26 +4,8 @@
 </p>
 <h3>Stats</h3>
 <mat-grid-list cols="3" gutterSize="4px" rowHeight="45px">
-  <mat-grid-tile>
-    <app-stat-card name="Weapon">{{ charService.selectedChar.skill.weapon }}</app-stat-card>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <app-stat-card name="Ballistic">30</app-stat-card>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <app-stat-card name="Attacks">1</app-stat-card>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <app-stat-card name="Movement">3 m</app-stat-card>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <app-stat-card name="Charge Attack">6 m</app-stat-card>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <app-stat-card name="Dash">9 m</app-stat-card>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <app-stat-card name="Fate Points">1</app-stat-card>
+  <mat-grid-tile *ngFor="let tracker of charService.selectedChar.trackers; index as i; first as isFirst">
+    <app-stat-card [name]="tracker.name">{{tracker.value}}</app-stat-card>
   </mat-grid-tile>
 </mat-grid-list>
 

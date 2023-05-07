@@ -36,8 +36,13 @@ export interface CharacterStats {
 
   skill: SkillStats;
 
+  mods: SkillStats;
+
+  trackers: Tracker[];
+
 }
 
-export interface Modification {
-
+export interface Tracker {
+  name: string;
+  value: string;
 }
