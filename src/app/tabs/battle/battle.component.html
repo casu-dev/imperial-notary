@@ -8,7 +8,7 @@
 <h3>Stats</h3>
 <mat-grid-list cols="3" gutterSize="4px" rowHeight="45px">
   <mat-grid-tile *ngFor="let tracker of charService.selectedChar.trackers;">
-    <app-stat-card [(value)]="tracker.value" [name]="tracker.name"></app-stat-card>
+    <app-stat-card [(value)]="tracker.value" [name]="tracker.name" [numeric]="false"></app-stat-card>
   </mat-grid-tile>
 </mat-grid-list>
 

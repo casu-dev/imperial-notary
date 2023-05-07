@@ -7,6 +7,7 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 })
 export class StatCardComponent {
   @Input() name: string = '';
+  @Input() numeric: boolean = true;
 
   @Input() value: string = '';
   @Output() valueChange = new EventEmitter<string>();
