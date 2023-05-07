@@ -1,0 +1,85 @@
+{
+  "configVersion": 1,
+  "timestamp": 1683476674250,
+  "index": "https://casu-dev.github.io/imperial-notary/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "https://casu-dev.github.io/imperial-notary/favicon.ico",
+        "https://casu-dev.github.io/imperial-notary/index.html",
+        "https://casu-dev.github.io/imperial-notary/main.d56deaa999713451.js",
+        "https://casu-dev.github.io/imperial-notary/manifest.webmanifest",
+        "https://casu-dev.github.io/imperial-notary/polyfills.60252fa30edbba7b.js",
+        "https://casu-dev.github.io/imperial-notary/runtime.86fb49abb978edc3.js",
+        "https://casu-dev.github.io/imperial-notary/styles.578cff3e4486b116.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "https://casu-dev.github.io/imperial-notary/assets/_variables.scss",
+        "https://casu-dev.github.io/imperial-notary/assets/dark-theme.scss",
+        "https://casu-dev.github.io/imperial-notary/assets/icons/icon-128x128.png",
+        "https://casu-dev.github.io/imperial-notary/assets/icons/icon-144x144.png",
+        "https://casu-dev.github.io/imperial-notary/assets/icons/icon-152x152.png",
+        "https://casu-dev.github.io/imperial-notary/assets/icons/icon-192x192.png",
+        "https://casu-dev.github.io/imperial-notary/assets/icons/icon-384x384.png",
+        "https://casu-dev.github.io/imperial-notary/assets/icons/icon-512x512.png",
+        "https://casu-dev.github.io/imperial-notary/assets/icons/icon-72x72.png",
+        "https://casu-dev.github.io/imperial-notary/assets/icons/icon-96x96.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "https://casu-dev.github.io/imperial-notary/assets/_variables.scss": "25c1b6a3928de6d61d2a87040b99b56b0d1b07fd",
+    "https://casu-dev.github.io/imperial-notary/assets/dark-theme.scss": "b88c4bf4f2c965bb4d4e6ccc501818d0a2e95691",
+    "https://casu-dev.github.io/imperial-notary/assets/icons/icon-128x128.png": "d26b2510ee31f9668b6c628704052d378caf70fe",
+    "https://casu-dev.github.io/imperial-notary/assets/icons/icon-144x144.png": "4838db59a7098a61cc57e9acd47d66b39687b9ab",
+    "https://casu-dev.github.io/imperial-notary/assets/icons/icon-152x152.png": "a8e5ac0b79d4a730fc323a44e3271c01e4789b26",
+    "https://casu-dev.github.io/imperial-notary/assets/icons/icon-192x192.png": "88f0c7d17e460ea95f8eddbeea9506a112dac2fa",
+    "https://casu-dev.github.io/imperial-notary/assets/icons/icon-384x384.png": "b131364e10b89e0dd2158aa9f525ea4b007a52eb",
+    "https://casu-dev.github.io/imperial-notary/assets/icons/icon-512x512.png": "9195959f08e713d22ea851693de8c42090d897e8",
+    "https://casu-dev.github.io/imperial-notary/assets/icons/icon-72x72.png": "563fe3fda7abb6f6e325b05ce41f5903e95238d9",
+    "https://casu-dev.github.io/imperial-notary/assets/icons/icon-96x96.png": "0e9afa8ebdf8d6ba300921a769623eac7cceec7c",
+    "https://casu-dev.github.io/imperial-notary/favicon.ico": "04c278dba3e54393c4c980f7fd4dcd43796ef813",
+    "https://casu-dev.github.io/imperial-notary/index.html": "70dfe56cf86c6293c0d86cf63ce0d59773e55e33",
+    "https://casu-dev.github.io/imperial-notary/main.d56deaa999713451.js": "72d470f4dc97feb93ccde90e3c0e5805c2ebeea2",
+    "https://casu-dev.github.io/imperial-notary/manifest.webmanifest": "aa05b6caa6b46a24219edd8fa5347cf7771c1a77",
+    "https://casu-dev.github.io/imperial-notary/polyfills.60252fa30edbba7b.js": "340b3b4627630ee2ca24dfbd1c90fcdad8cb7023",
+    "https://casu-dev.github.io/imperial-notary/runtime.86fb49abb978edc3.js": "6c01d737b7f2bda3988015783a34c658ae66869a",
+    "https://casu-dev.github.io/imperial-notary/styles.578cff3e4486b116.css": "5eae12af35b27e469c4ac307f239403511f094fa"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
