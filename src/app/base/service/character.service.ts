@@ -6,6 +6,7 @@ const CHAR_SAVE_KEY = 'charStats'
 @Injectable({
   providedIn: 'root'
 })
+
 export class CharacterService {
 
   selectedChar: CharacterStats = {
@@ -60,8 +61,8 @@ export class CharacterService {
     localStorage.setItem(CHAR_SAVE_KEY, JSON.stringify(this.selectedChar));
   }
 
-  public loadCharacter(charName: string): void {
-    let item = localStorage.getItem(charName);
+  public loadCharacter(): void {
+    let item = localStorage.getItem(CHAR_SAVE_KEY);
     if (item) {
       this.selectedChar = JSON.parse(item);
     }

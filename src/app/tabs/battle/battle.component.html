@@ -8,7 +8,7 @@
 <h3>Stats</h3>
 <mat-grid-list cols="3" gutterSize="4px" rowHeight="45px">
   <mat-grid-tile *ngFor="let tracker of charService.selectedChar.trackers;">
-    <app-stat-card [name]="tracker.name">{{tracker.value}}</app-stat-card>
+    <app-stat-card [(value)]="tracker.value" [name]="tracker.name"></app-stat-card>
   </mat-grid-tile>
 </mat-grid-list>
 
@@ -16,6 +16,6 @@
 
 <div class="attack-list">
   <app-attack-element *ngFor="let w of charService.selectedChar.weapons; first as isFirst"
-                      [damage]="w.damage" [displayLabel]="isFirst" [hit]="w.hit" [name]="w.name">
+                      [(damage)]="w.damage" [(hit)]="w.hit" [displayLabel]="isFirst" [name]="w.name">
   </app-attack-element>
 </div>

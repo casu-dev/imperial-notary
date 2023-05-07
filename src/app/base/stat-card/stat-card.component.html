@@ -1,5 +1,6 @@
 <span *ngIf="name" class="card-title">{{name | uppercase}}</span>
 <div class="stat-card">
-  <span><ng-content></ng-content></span>
+  <input (ngModelChange)="onValueChange($event)" [(ngModel)]="value" [readonly]="readOnly" inputmode="numeric"
+         matInput matNativeControl pattern="\d*"/>
 </div>
 

@@ -1,28 +1,30 @@
 <h3>Stats</h3>
 <div class="base-stat-container">
-  <app-stat-element [base]="charService.selectedChar.skill.weapon" [displayLabel]="true"
-                    [modification]="charService.selectedChar.mods.weapon" name="Weapon"></app-stat-element>
-  <app-stat-element [base]="charService.selectedChar.skill.ballistic"
-                    [modification]="charService.selectedChar.mods.ballistic" name="Ballistic"></app-stat-element>
-  <app-stat-element [base]="charService.selectedChar.skill.strength"
-                    [modification]="charService.selectedChar.mods.strength" name="Strength"></app-stat-element>
-  <app-stat-element [base]="charService.selectedChar.skill.toughness"
-                    [modification]="charService.selectedChar.mods.toughness" name="Toughness"></app-stat-element>
-  <app-stat-element [base]="charService.selectedChar.skill.agility"
-                    [modification]="charService.selectedChar.mods.agility" name="Agility"></app-stat-element>
-  <app-stat-element [base]="charService.selectedChar.skill.intelligence"
-                    [modification]="charService.selectedChar.mods.intelligence" name="Intelligence"></app-stat-element>
-  <app-stat-element [base]="charService.selectedChar.skill.willpower"
-                    [modification]="charService.selectedChar.mods.willpower" name="Willpower"></app-stat-element>
-  <app-stat-element [base]="charService.selectedChar.skill.fellowship"
-                    [modification]="charService.selectedChar.mods.fellowship" name="Fellowship"></app-stat-element>
-  <app-stat-element [base]="charService.selectedChar.skill.attacks"
-                    [modification]="charService.selectedChar.mods.attacks" name="Attacks"></app-stat-element>
-  <app-stat-element [base]="charService.selectedChar.skill.wounds"
-                    [modification]="charService.selectedChar.mods.wounds" name="Wounds"></app-stat-element>
-  <app-stat-element [base]="charService.selectedChar.skill.fate"
-                    [modification]="charService.selectedChar.mods.fate" name="Fate Points"></app-stat-element>
+  <app-stat-element [(base)]="charService.selectedChar.skill.weapon" [(modification)]="charService.selectedChar.mods.weapon"
+                    [displayLabel]="true" name="Weapon"></app-stat-element>
+  <app-stat-element [(base)]="charService.selectedChar.skill.ballistic"
+                    [(modification)]="charService.selectedChar.mods.ballistic" name="Ballistic"></app-stat-element>
+  <app-stat-element [(base)]="charService.selectedChar.skill.strength"
+                    [(modification)]="charService.selectedChar.mods.strength" name="Strength"></app-stat-element>
+  <app-stat-element [(base)]="charService.selectedChar.skill.toughness"
+                    [(modification)]="charService.selectedChar.mods.toughness" name="Toughness"></app-stat-element>
+  <app-stat-element [(base)]="charService.selectedChar.skill.agility"
+                    [(modification)]="charService.selectedChar.mods.agility" name="Agility"></app-stat-element>
+  <app-stat-element [(base)]="charService.selectedChar.skill.intelligence"
+                    [(modification)]="charService.selectedChar.mods.intelligence"
+                    name="Intelligence"></app-stat-element>
+  <app-stat-element [(base)]="charService.selectedChar.skill.willpower"
+                    [(modification)]="charService.selectedChar.mods.willpower" name="Willpower"></app-stat-element>
+  <app-stat-element [(base)]="charService.selectedChar.skill.fellowship"
+                    [(modification)]="charService.selectedChar.mods.fellowship" name="Fellowship"></app-stat-element>
+  <app-stat-element [(base)]="charService.selectedChar.skill.attacks"
+                    [(modification)]="charService.selectedChar.mods.attacks" name="Attacks"></app-stat-element>
+  <app-stat-element [(base)]="charService.selectedChar.skill.wounds"
+                    [(modification)]="charService.selectedChar.mods.wounds" name="Wounds"></app-stat-element>
+  <app-stat-element [(base)]="charService.selectedChar.skill.fate"
+                    [(modification)]="charService.selectedChar.mods.fate" name="Fate Points"></app-stat-element>
 </div>
+
 <h3>Base Skill</h3>
 <div class="base-stat-container">
   <app-skill-element [displayLabel]="true" name="Animal Handling" score="57"></app-skill-element>

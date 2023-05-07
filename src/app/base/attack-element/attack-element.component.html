@@ -1,3 +1,5 @@
 <app-label-card [name]="displayLabel? 'Name' : ''" type="name" class="label-card">{{name}}</app-label-card>
-<app-stat-card [name]="displayLabel? 'Hit' : ''" class="hit-card" type="stat">{{hit}}</app-stat-card>
-<app-stat-card [name]="displayLabel? 'Damage' : ''" type="stat" class="dmg-card">{{damage}}</app-stat-card>
+<app-stat-card (valueChange)="onHitChange($event)" [name]="displayLabel? 'Hit' : ''" [value]="hit"
+               class="hit-card" type="stat">{{hit}}</app-stat-card>
+<app-stat-card (valueChange)="onDamageChange($event)" [name]="displayLabel? 'Damage' : ''" [value]="damage"
+               class="dmg-card">{{damage}}</app-stat-card>

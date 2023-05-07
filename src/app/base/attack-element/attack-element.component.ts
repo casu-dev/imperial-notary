@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'app-attack-element',
@@ -8,7 +8,20 @@ import {Component, Input} from '@angular/core';
 export class AttackElementComponent {
 
   @Input() name: string = '';
+  @Input() displayLabel: boolean = false;
+
   @Input() hit: string = '';
   @Input() damage: string = '';
-  @Input() displayLabel: boolean = false;
+  @Output() hitChange = new EventEmitter<string>();
+  @Output() damageChange = new EventEmitter<string>();
+
+  onHitChange(newValue: string) {
+    this.hit = newValue;
+    this.hitChange.emit(this.hit);
+  }
+
+  onDamageChange(newValue: string) {
+    this.damage = newValue;
+    this.damageChange.emit(this.damage);
+  }
 }

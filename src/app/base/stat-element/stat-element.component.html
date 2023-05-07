@@ -1,5 +1,7 @@
-<app-stat-card [name]="displayLabel? 'Current' : ''" class="stat-card"
-               type="stat">{{base + modification}}</app-stat-card>
-<app-label-card [name]="displayLabel? 'Stat Name' : ''" class="label-card" type="name">{{name}}</app-label-card>
-<app-stat-card [name]="displayLabel? 'Base' : ''" class="stat-card" type="stat">{{base}}</app-stat-card>
-<app-stat-card [name]="displayLabel? 'Mod' : ''" class="stat-card" type="stat">{{modification}}</app-stat-card>
+<app-stat-card [name]="displayLabel? 'Current' : ''" [readOnly]="true" [value]="sumString"
+               class="stat-card"></app-stat-card>
+<app-label-card [name]="displayLabel? 'Name' : ''" class="label-card">{{name}}</app-label-card>
+<app-stat-card (valueChange)="onBaseValueChange($event)" [name]="displayLabel? 'Base' : ''" [value]="base.toString()"
+               class="stat-card"></app-stat-card>
+<app-stat-card (valueChange)="onModValueChange($event)" [name]="displayLabel? 'Mod' : ''"
+               [value]="modification.toString()" class="stat-card"></app-stat-card>
