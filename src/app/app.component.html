@@ -4,10 +4,8 @@
   </mat-toolbar>
 
   <div class="panel">
-    <app-battle *ngIf="selectedPage === 'battle'"></app-battle>
-    <app-skills *ngIf="selectedPage === 'skill'"></app-skills>
-    <app-inventory *ngIf="selectedPage === 'inv'"></app-inventory>
+    <router-outlet></router-outlet>
   </div>
 
-  <app-nav-bar (select)="selectedPage = $event"></app-nav-bar>
+  <app-nav-bar></app-nav-bar>
 </mat-sidenav-container>

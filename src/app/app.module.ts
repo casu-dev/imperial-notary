@@ -26,6 +26,7 @@ import {MatDialogModule} from "@angular/material/dialog";
 import {FormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {SkillElementComponent} from './base/skill-element/skill-element.component';
+import {AppRoutingModule} from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import {SkillElementComponent} from './base/skill-element/skill-element.componen
       registrationStrategy: 'registerWhenStable:30000'
     }),
     MatDialogModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
