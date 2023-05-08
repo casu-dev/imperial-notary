@@ -12,7 +12,7 @@
   justify-content: start;
   align-items: center;
   border-radius: 2px;
-  height: $data-card-height;
+  min-height: $data-card-height;
 
   > span {
     padding: 0 0.5em;

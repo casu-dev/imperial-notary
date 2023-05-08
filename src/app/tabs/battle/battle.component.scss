@@ -1,7 +1,7 @@
 .attack-list {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
 }
 
 app-stat-card {

@@ -1,11 +1,11 @@
 :host {
   display: flex;
-  gap: 4px;
+  gap: 0.5rem;
   width: 100%;
 }
 
 .label-card {
-  width: 60%;
+  flex-grow: 1;
 
   .card {
     justify-content: start !important;
