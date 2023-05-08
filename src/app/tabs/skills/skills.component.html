@@ -32,7 +32,12 @@
                      [displayLabel]="isFirst" [name]="skill.name" [(score)]="skill.value">
   </app-skill-element>
 </div>
-<h3>Learned Skill</h3>
+<div class="headline">
+  <h3>Learned Skill</h3>
+  <button mat-icon-button>
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
 <div class="base-stat-container">
   <app-skill-element *ngFor="let skill of charService.selectedChar.learnedSkills; first as isFirst"
                      [displayLabel]="isFirst" [name]="skill.name" [(score)]="skill.value">

@@ -5,7 +5,13 @@
 
   </app-health-bar>
 </p>
-<h3>Stats</h3>
+
+<div class="headline">
+  <h3>Stats</h3>
+  <button mat-icon-button>
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
 
 <div class="tracker-container">
   <app-stat-card *ngFor="let tracker of charService.selectedChar.trackers;" [(value)]="tracker.value"
@@ -13,7 +19,12 @@
 </div>
 
 
-<h3>Weapons</h3>
+<div class="headline">
+  <h3>Weapons</h3>
+  <button mat-icon-button>
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
 
 <div class="attack-list">
   <app-attack-element *ngFor="let w of charService.selectedChar.weapons; first as isFirst"
