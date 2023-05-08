@@ -6,11 +6,12 @@
   </app-health-bar>
 </p>
 <h3>Stats</h3>
-<mat-grid-list cols="3" gutterSize="4px" rowHeight="45px">
-  <mat-grid-tile *ngFor="let tracker of charService.selectedChar.trackers;">
-    <app-stat-card [(value)]="tracker.value" [name]="tracker.name" [numeric]="false"></app-stat-card>
-  </mat-grid-tile>
-</mat-grid-list>
+
+<div class="tracker-container">
+  <app-stat-card *ngFor="let tracker of charService.selectedChar.trackers;" [(value)]="tracker.value"
+                 [name]="tracker.name" [numeric]="false"></app-stat-card>
+</div>
+
 
 <h3>Weapons</h3>
 

@@ -50,6 +50,7 @@ export class CharacterService {
       {name: 'Movement', value: '3 m'},
       {name: 'Charge Attack', value: '6 m'},
       {name: 'Dash', value: '9 m'},
+      {name: 'Fate Left', value: '1'},
     ] as Tracker[],
     weapons: [
       {name: '1H Hammer', hit: '47', damage: '1d10 + 5'},
