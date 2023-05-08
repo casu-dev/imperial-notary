@@ -5,6 +5,7 @@ import {SkillsComponent} from "./tabs/skills/skills.component";
 import {InventoryComponent} from "./tabs/inventory/inventory.component";
 
 const routes: Routes = [
+  {path: '', redirectTo: 'battle', pathMatch: "full"},
   {path: 'battle', component: BattleComponent},
   {path: 'skill', component: SkillsComponent},
   {path: 'inv', component: InventoryComponent},

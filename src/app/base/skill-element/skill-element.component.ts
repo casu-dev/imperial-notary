@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'app-skill-element',
@@ -8,7 +8,16 @@ import {Component, Input} from '@angular/core';
 export class SkillElementComponent {
 
   @Input() name: string = '';
-  @Input() score: string = '';
+  @Input() score: number = 0;
+  @Output() scoreChange = new EventEmitter<number>();
   @Input() displayLabel: boolean = false;
+
+  onScoreChange(newValue: string) {
+    if(Number.isNaN(parseInt(newValue))) {
+      return;
+    }
+    this.score = parseInt(newValue);
+    this.scoreChange.emit(this.score);
+  }
 
 }

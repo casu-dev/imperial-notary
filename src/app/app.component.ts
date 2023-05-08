@@ -8,11 +8,17 @@ import {CharacterService} from "./base/service/character.service";
 })
 export class AppComponent implements OnInit {
 
-  constructor(private charService: CharacterService) {
+  constructor(public charService: CharacterService) {
   }
 
   saveChar() {
     this.charService.saveCharacter();
+  }
+
+  deleteChar() {
+    if (confirm('Delete Character?')) {
+      this.charService.deleteCharacter();
+    }
   }
 
   ngOnInit(): void {

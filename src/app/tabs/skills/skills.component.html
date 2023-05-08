@@ -1,6 +1,7 @@
 <h3>Stats</h3>
 <div class="base-stat-container">
-  <app-stat-element [(base)]="charService.selectedChar.skill.weapon" [(modification)]="charService.selectedChar.mods.weapon"
+  <app-stat-element [(base)]="charService.selectedChar.skill.weapon"
+                    [(modification)]="charService.selectedChar.mods.weapon"
                     [displayLabel]="true" name="Weapon"></app-stat-element>
   <app-stat-element [(base)]="charService.selectedChar.skill.ballistic"
                     [(modification)]="charService.selectedChar.mods.ballistic" name="Ballistic"></app-stat-element>
@@ -27,28 +28,13 @@
 
 <h3>Base Skill</h3>
 <div class="base-stat-container">
-  <app-skill-element [displayLabel]="true" name="Animal Handling" score="57"></app-skill-element>
-  <app-skill-element name="Charm" score="30"></app-skill-element>
-  <app-skill-element name="Command" score="57"></app-skill-element>
-  <app-skill-element name="Concealment" score="19"></app-skill-element>
-  <app-skill-element name="Consume Alcohol" score="57"></app-skill-element>
-  <app-skill-element name="Disguise" score="57"></app-skill-element>
-  <app-skill-element name="Drive" score="57"></app-skill-element>
-  <app-skill-element name="Evaluate" score="57"></app-skill-element>
-  <app-skill-element name="Gamble" score="57"></app-skill-element>
-  <app-skill-element name="Gossip" score="57"></app-skill-element>
-  <app-skill-element name="Haggle" score="57"></app-skill-element>
-  <app-skill-element name="Intimidate" score="57"></app-skill-element>
-  <app-skill-element name="Perception" score="57"></app-skill-element>
-  <app-skill-element name="Ride" score="57"></app-skill-element>
-  <app-skill-element name="Row" score="57"></app-skill-element>
-  <app-skill-element name="Scale Sheer Surface" score="57"></app-skill-element>
-  <app-skill-element name="Search" score="57"></app-skill-element>
-  <app-skill-element name="Silent Move" score="57"></app-skill-element>
-  <app-skill-element name="Swim" score="57"></app-skill-element>
+  <app-skill-element *ngFor="let skill of charService.selectedChar.baseSkills; first as isFirst"
+                     [displayLabel]="isFirst" [name]="skill.name" [(score)]="skill.value">
+  </app-skill-element>
 </div>
 <h3>Learned Skill</h3>
 <div class="base-stat-container">
-  <app-skill-element [displayLabel]="true" name="Common Knowledge (Dwarves)" score="57"></app-skill-element>
-  <app-skill-element name="Charm" score="30"></app-skill-element>
+  <app-skill-element *ngFor="let skill of charService.selectedChar.learnedSkills; first as isFirst"
+                     [displayLabel]="isFirst" [name]="skill.name" [(score)]="skill.value">
+  </app-skill-element>
 </div>

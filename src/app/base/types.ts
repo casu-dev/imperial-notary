@@ -23,19 +23,29 @@ export interface SkillStats {
 export interface CharacterStats {
 
   // Info
+  meta: MetaInfo;
+  currentHealth: number;
+  skill: SkillStats;
+  mods: SkillStats;
+  trackers: Tracker[];
+  weapons: Weapon[];
+  baseSkills: SkillStat[]
+  learnedSkills: SkillStat[]
+
+  // todo passives
+}
+
+export interface MetaInfo {
   name: string;
   race: string;
   age: string;
   sex: string;
   career: string;
-  expUsed: number;
-  expFree: number;
-  currentHealth: number;
-  currentFate: number;
-  skill: SkillStats;
-  mods: SkillStats;
-  trackers: Tracker[];
-  weapons: Weapon[];
+}
+
+export interface SkillStat {
+  name: string;
+  value: number;
 }
 
 export interface Tracker {
