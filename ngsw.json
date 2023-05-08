@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1683561206070,
+  "timestamp": 1683562530327,
   "index": "https://casu-dev.github.io/imperial-notary/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "https://casu-dev.github.io/imperial-notary/favicon.ico",
         "https://casu-dev.github.io/imperial-notary/index.html",
-        "https://casu-dev.github.io/imperial-notary/main.5a59ee09f9cd69f0.js",
+        "https://casu-dev.github.io/imperial-notary/main.0837c997382acda0.js",
         "https://casu-dev.github.io/imperial-notary/manifest.webmanifest",
         "https://casu-dev.github.io/imperial-notary/polyfills.60252fa30edbba7b.js",
         "https://casu-dev.github.io/imperial-notary/runtime.86fb49abb978edc3.js",
@@ -58,8 +58,8 @@
     "https://casu-dev.github.io/imperial-notary/assets/icons/icon-96x96.png": "abe014351f0bd601556f162f49ab71fd7bcbf5ab",
     "https://casu-dev.github.io/imperial-notary/assets/icons/icon.svg": "cfa81fbfff8bb1a1ddb05853aaabed8303f9e754",
     "https://casu-dev.github.io/imperial-notary/favicon.ico": "dda4ea31a28849647666d94aa068fe59236c0eed",
-    "https://casu-dev.github.io/imperial-notary/index.html": "c0355d525021f389bdd751503e5e666d2e03fd68",
-    "https://casu-dev.github.io/imperial-notary/main.5a59ee09f9cd69f0.js": "58cac34e53e79cda472ba22ccb0ada8d1ec0eaaf",
+    "https://casu-dev.github.io/imperial-notary/index.html": "79bbb42a692d30ff8e407f4ebed886854f3e38e1",
+    "https://casu-dev.github.io/imperial-notary/main.0837c997382acda0.js": "0ecd4d84ce9a41e4f7ff4a4079aa75a4b36e991b",
     "https://casu-dev.github.io/imperial-notary/manifest.webmanifest": "0b038576da8d70b285be88d81176bd93102cadda",
     "https://casu-dev.github.io/imperial-notary/polyfills.60252fa30edbba7b.js": "340b3b4627630ee2ca24dfbd1c90fcdad8cb7023",
     "https://casu-dev.github.io/imperial-notary/runtime.86fb49abb978edc3.js": "6c01d737b7f2bda3988015783a34c658ae66869a",
