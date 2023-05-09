@@ -20,7 +20,7 @@ export class BattleComponent {
   onHealthClick() {
     const dialogRef = this.dialog.open(HealthDialogComponent);
     dialogRef.afterClosed().subscribe((res: HealDialogResult) => {
-      if (Number.isNaN(parseInt(res.value))) {
+      if (!res || Number.isNaN(parseInt(res.value))) {
         return;
       }
       let curr = this.charService.selectedChar.currentHealth;

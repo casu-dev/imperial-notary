@@ -28,9 +28,12 @@ export class CharacterService {
     fate: 2,
   } as SkillStats;
 
+  ownsCharacter = true;
+
   constructor() {
     const load = this.loadCharacter();
     if (!load) {
+      this.ownsCharacter = false;
       this.selectedChar = this.createCharacter(this.debugMeta, this.debugSkill);
     } else {
       this.selectedChar = load;
@@ -53,8 +56,8 @@ export class CharacterService {
   public addWeapon(name: string) {
     this.selectedChar.weapons.push({
       name,
-      hit : (this.selectedChar.skill.weapon + this.selectedChar.mods.weapon).toString(),
-      damage : '1d10'
+      hit: (this.selectedChar.skill.weapon + this.selectedChar.mods.weapon).toString(),
+      damage: '1d10'
     } as Weapon);
     this.saveCharacter();
   }
@@ -69,7 +72,7 @@ export class CharacterService {
       name,
       value: 0,
     });
-    this.selectedChar.learnedSkills.sort((a,b) => a.name.localeCompare(b.name));
+    this.selectedChar.learnedSkills.sort((a, b) => a.name.localeCompare(b.name));
     this.saveCharacter();
   }
 
@@ -83,6 +86,7 @@ export class CharacterService {
   }
 
   public deleteCharacter(): void {
+    this.ownsCharacter = false;
     localStorage.removeItem(CHAR_SAVE_KEY);
   }
 
@@ -119,16 +123,9 @@ export class CharacterService {
         {name: 'Charge Attack', value: `${stats.movement * 2} m`},
         {name: 'Run', value: `${stats.movement * 3} m`},
         {name: 'Fate Left', value: stats.fate.toString()},
-        {name: 'Spent EXP', value: 0},
-        {name: 'Free EXP', value: 0},
+        {name: 'Initiative ', value: '1d10 + ' + Math.floor(stats.agility / 10).toString()},
       ] as Tracker[],
-      weapons: [
-        {
-          name: 'Short Sword',
-          hit: stats.weapon.toString(),
-          damage: '1d10 + ' + Math.floor(stats.strength / 10).toString()
-        },
-      ] as Weapon[],
+      weapons: [] as Weapon[],
       baseSkills: this.generateBaseSkillList(stats),
       learnedSkills: [],
     } as CharacterStats;

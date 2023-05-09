@@ -1,0 +1,67 @@
+<div class="content">
+  <h2>Character Creation</h2>
+  <form #f [formGroup]="characterForm" (ngSubmit)="nameControl.valid && characterForm.valid && handleSubmit()">
+    <mat-form-field [hideRequiredMarker]="true">
+      <mat-label>Character Name</mat-label>
+      <input matInput [formControl]="nameControl">
+    </mat-form-field>
+    <mat-divider></mat-divider>
+    <mat-form-field [hideRequiredMarker]="true">
+      <mat-label>Weapon Skill</mat-label>
+      <input matInput formControlName="weapon" inputmode="numeric" pattern="\d+">
+      <mat-error></mat-error>
+    </mat-form-field>
+    <mat-form-field [hideRequiredMarker]="true">
+      <mat-label>Ballistic Skill</mat-label>
+      <input matInput formControlName="ballistic" inputmode="numeric" pattern="\d+">
+    </mat-form-field>
+    <mat-form-field [hideRequiredMarker]="true">
+      <mat-label>Strength</mat-label>
+      <input matInput formControlName="strength" inputmode="numeric" pattern="\d+">
+    </mat-form-field>
+    <mat-form-field [hideRequiredMarker]="true">
+      <mat-label>Toughness</mat-label>
+      <input matInput formControlName="toughness" inputmode="numeric" pattern="\d+">
+    </mat-form-field>
+    <mat-form-field [hideRequiredMarker]="true">
+      <mat-label>Agility</mat-label>
+      <input matInput formControlName="agility" inputmode="numeric" pattern="\d+">
+    </mat-form-field>
+    <mat-form-field [hideRequiredMarker]="true">
+      <mat-label>Intelligence</mat-label>
+      <input matInput formControlName="intelligence" inputmode="numeric" pattern="\d+">
+    </mat-form-field>
+    <mat-form-field [hideRequiredMarker]="true">
+      <mat-label>Willpower</mat-label>
+      <input matInput formControlName="willpower" inputmode="numeric" pattern="\d+">
+    </mat-form-field>
+    <mat-form-field [hideRequiredMarker]="true">
+      <mat-label>Fellowship</mat-label>
+      <input matInput formControlName="fellowship" inputmode="numeric" pattern="\d+">
+    </mat-form-field>
+    <mat-divider></mat-divider>
+    <mat-form-field [hideRequiredMarker]="true">
+      <mat-label>Attacks</mat-label>
+      <input matInput formControlName="attacks" inputmode="numeric" pattern="\d+">
+    </mat-form-field>
+    <mat-form-field [hideRequiredMarker]="true">
+      <mat-label>Wounds</mat-label>
+      <input matInput formControlName="wounds" inputmode="numeric" pattern="\d+">
+    </mat-form-field>
+    <mat-form-field [hideRequiredMarker]="true">
+      <mat-label>Movement</mat-label>
+      <input matInput formControlName="movement" inputmode="numeric" pattern="\d+">
+    </mat-form-field>
+    <mat-form-field [hideRequiredMarker]="true">
+      <mat-label>Fate</mat-label>
+      <input matInput formControlName="fate" inputmode="numeric" pattern="\d+">
+    </mat-form-field>
+
+    <div class="buttons">
+      <button mat-raised-button routerLink="/" type="button">Back</button>
+      <button mat-raised-button color="primary" type="submit">Create</button>
+    </div>
+  </form>
+
+
+</div>

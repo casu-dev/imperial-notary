@@ -1,7 +1,6 @@
 
 html, body {
-  height: 100vh;
-  overflow: hidden;
+  height: 100dvh;
 }
 
 body {
@@ -17,4 +16,10 @@ body {
   :nth-child(1) {
     flex-grow: 1;
   }
+}
+
+.content {
+  margin: 0 auto;
+  padding: 0 0.5rem;
+  max-width: 500px;
 }

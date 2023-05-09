@@ -15,15 +15,15 @@ import {AttackElementComponent} from './base/attack-element/attack-element.compo
 import {MatListModule} from "@angular/material/list";
 import {LabelCardComponent} from './base/label-card/label-card.component';
 import {MatSidenavModule} from "@angular/material/sidenav";
-import {NavBarComponent} from './base/nav-bar/nav-bar.component';
-import {NavBarSpacerComponent} from './base/nav-bar/nav-bar-spacer/nav-bar-spacer.component';
+import {NavBarComponent} from './tabs/parent/nav-bar/nav-bar.component';
+import {NavBarSpacerComponent} from './tabs/parent/nav-bar/nav-bar-spacer/nav-bar-spacer.component';
 import {BattleComponent} from './tabs/battle/battle.component';
 import {SkillsComponent} from './tabs/skills/skills.component';
 import {InventoryComponent} from './tabs/inventory/inventory.component';
 import {ServiceWorkerModule} from '@angular/service-worker';
 import {HealthDialogComponent} from './base/dialog/health-dialog/health-dialog.component';
 import {MatDialogModule} from "@angular/material/dialog";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {SkillElementComponent} from './base/skill-element/skill-element.component';
 import {AppRoutingModule} from './app-routing.module';
@@ -33,6 +33,9 @@ import {MatMenuModule} from "@angular/material/menu";
 import {TrackersComponent} from './tabs/battle/trackers/trackers.component';
 import {WeaponsComponent} from './tabs/battle/weapons/weapons.component';
 import { LearnedSkillsComponent } from './tabs/skills/learned-skills/learned-skills.component';
+import { HomeComponent } from './home/home.component';
+import { CreatorComponent } from './creator/creator.component';
+import { TabsParentComponent } from './tabs/parent/tabs-parent.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +55,10 @@ import { LearnedSkillsComponent } from './tabs/skills/learned-skills/learned-ski
     AddDialogComponent,
     TrackersComponent,
     WeaponsComponent,
-    LearnedSkillsComponent
+    LearnedSkillsComponent,
+    HomeComponent,
+    CreatorComponent,
+    TabsParentComponent
   ],
   imports: [
     BrowserModule,
@@ -66,6 +72,7 @@ import { LearnedSkillsComponent } from './tabs/skills/learned-skills/learned-ski
     MatGridListModule,
     MatListModule,
     MatSidenavModule,
+    ReactiveFormsModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),
       // Register the ServiceWorker as soon as the application is stable
