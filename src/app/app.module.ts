@@ -28,6 +28,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {SkillElementComponent} from './base/skill-element/skill-element.component';
 import {AppRoutingModule} from './app-routing.module';
 import {StatElementComponent} from './base/stat-element/stat-element.component';
+import { AddDialogComponent } from './base/dialog/add-dialog/add-dialog.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import {StatElementComponent} from './base/stat-element/stat-element.component';
     InventoryComponent,
     HealthDialogComponent,
     SkillElementComponent,
-    StatElementComponent
+    StatElementComponent,
+    AddDialogComponent
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,7 @@ import {MatDialog} from "@angular/material/dialog";
 import {HealthDialogComponent} from "../../base/dialog/health-dialog/health-dialog.component";
 import {HealDialogResult} from "../../base/types";
 import {CharacterService} from "../../base/service/character.service";
+import {AddDialogComponent} from "../../base/dialog/add-dialog/add-dialog.component";
 
 @Component({
   selector: 'app-battle',
@@ -17,7 +18,7 @@ export class BattleComponent {
   }
 
   onHealthClick() {
-    const dialogRef = this.dialog.open(HealthDialogComponent, {width: '100%', position: {top: '24px'}});
+    const dialogRef = this.dialog.open(HealthDialogComponent, {position: {top: '24px'}});
     dialogRef.afterClosed().subscribe((res: HealDialogResult) => {
       if (Number.isNaN(parseInt(res.value))) {
         return;
@@ -29,6 +30,24 @@ export class BattleComponent {
         this.charService.selectedChar.currentHealth = Math.min(Math.max(curr - parseInt(res.value), 0), this.charService.finalWounds)
       }
     })
+  }
+
+  onAddStatClick() {
+    const dialogRef = this.dialog.open(AddDialogComponent, {position: {top: '24px'}});
+    dialogRef.afterClosed().subscribe((res: {name: string}) => {
+      if(res) {
+        this.charService.addTracker(res.name);
+      }
+    });
+  }
+
+  onAddWeaponClick() {
+    const dialogRef = this.dialog.open(AddDialogComponent, {position: {top: '24px'}});
+    dialogRef.afterClosed().subscribe((res: {name: string}) => {
+      if(res) {
+        this.charService.addWeapon(res.name);
+      }
+    });
   }
 
 }

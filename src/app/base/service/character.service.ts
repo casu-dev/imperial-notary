@@ -37,6 +37,32 @@ export class CharacterService {
     }
   }
 
+  public addTracker(name: string) {
+    this.selectedChar.trackers.push({
+      name,
+      value: '0',
+    } as Tracker);
+    this.saveCharacter();
+  }
+
+  public addWeapon(name: string) {
+    this.selectedChar.weapons.push({
+      name,
+      hit : (this.selectedChar.skill.weapon + this.selectedChar.mods.weapon).toString(),
+      damage : '1d10'
+    } as Weapon);
+    this.saveCharacter();
+  }
+
+  public addLearnedSkill(name: string) {
+    this.selectedChar.learnedSkills.push({
+      name,
+      value: 0,
+    });
+    this.selectedChar.learnedSkills.sort((a,b) => a.name.localeCompare(b.name));
+    this.saveCharacter();
+  }
+
   public saveCharacter(): void {
     localStorage.setItem(CHAR_SAVE_KEY, JSON.stringify(this.selectedChar));
   }

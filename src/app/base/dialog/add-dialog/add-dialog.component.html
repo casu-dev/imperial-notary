@@ -1,0 +1,11 @@
+<div mat-dialog-content>
+  <p>Add a new elemen to the list.</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Enter a Name</mat-label>
+    <input #input autofocus matInput type="text">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-dialog-close mat-raised-button>Cancel</button>
+  <button [matDialogClose]="{name: input.value}" color="primary" mat-raised-button>Add</button>
+</div>
