@@ -32,6 +32,7 @@ import {AddDialogComponent} from './base/dialog/add-dialog/add-dialog.component'
 import {MatMenuModule} from "@angular/material/menu";
 import {TrackersComponent} from './tabs/battle/trackers/trackers.component';
 import {WeaponsComponent} from './tabs/battle/weapons/weapons.component';
+import { LearnedSkillsComponent } from './tabs/skills/learned-skills/learned-skills.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import {WeaponsComponent} from './tabs/battle/weapons/weapons.component';
     StatElementComponent,
     AddDialogComponent,
     TrackersComponent,
-    WeaponsComponent
+    WeaponsComponent,
+    LearnedSkillsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,8 @@
 <div class="attack-list">
-  <app-attack-element *ngFor="let w of char.weapons; first as isFirst"
-                      [(damage)]="w.damage" [(hit)]="w.hit" [displayLabel]="isFirst" [name]="w.name">
-  </app-attack-element>
+  <span class="attack-row" *ngFor="let w of char.weapons; first as isFirst">
+    <button *ngIf="editMode" mat-icon-button (click)="onWeaponRemoveClick(w)" color="warn"><mat-icon>do_not_disturb_on</mat-icon></button>
+    <app-attack-element
+                        [(damage)]="w.damage" [(hit)]="w.hit" [displayLabel]="isFirst && !editMode" [name]="w.name">
+    </app-attack-element>
+  </span>
 </div>

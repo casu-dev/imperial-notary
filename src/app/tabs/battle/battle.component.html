@@ -7,7 +7,7 @@
 </p>
 
 <div class="headline">
-  <h3>Tracker</h3>
+  <h3>Trackers</h3>
   <button mat-icon-button [matMenuTriggerFor]="trackerMenu">
     <mat-icon>more_vert</mat-icon>
   </button>
@@ -17,13 +17,13 @@
     <mat-icon>add</mat-icon>
     <span>Add</span>
   </button>
-  <button mat-menu-item>
+  <button mat-menu-item (click)="trackers.editMode = !trackers.editMode">
     <mat-icon>edit</mat-icon>
     <span>Edit</span>
   </button>
 </mat-menu>
 
-<app-trackers [char]="charService.selectedChar"></app-trackers>
+<app-trackers #trackers [char]="charService.selectedChar" (remove)="charService.removeTracker($event)"></app-trackers>
 
 
 
@@ -38,11 +38,11 @@
     <mat-icon>add</mat-icon>
     <span>Add</span>
   </button>
-  <button mat-menu-item>
+  <button mat-menu-item (click)="weapons.editMode = !weapons.editMode">
     <mat-icon>edit</mat-icon>
     <span>Edit</span>
   </button>
 </mat-menu>
 
-<app-weapons [char]="charService.selectedChar"></app-weapons>
+<app-weapons #weapons [char]="charService.selectedChar" (remove)="charService.removeWeapon($event)"></app-weapons>
 

@@ -1,0 +1,7 @@
+<div class="base-stat-container">
+  <div class="stat-row" *ngFor="let skill of char.learnedSkills; first as isFirst">
+    <button *ngIf="editMode" mat-icon-button (click)="onSkillRemoveClick(skill)" color="warn"><mat-icon>do_not_disturb_on</mat-icon></button>
+    <app-skill-element [displayLabel]="isFirst && !editMode" [name]="skill.name" [(score)]="skill.value">
+    </app-skill-element>
+  </div>
+</div>

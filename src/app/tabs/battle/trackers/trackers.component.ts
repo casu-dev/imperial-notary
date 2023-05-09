@@ -1,5 +1,5 @@
-import {Component, Input} from '@angular/core';
-import {CharacterStats} from "../../../base/types";
+import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {CharacterStats, Tracker} from "../../../base/types";
 
 @Component({
   selector: 'app-trackers',
@@ -9,5 +9,14 @@ import {CharacterStats} from "../../../base/types";
 export class TrackersComponent {
 
   @Input() char!: CharacterStats;
+
+  @Output() remove = new EventEmitter<Tracker>();
+
+  editMode = false;
+
+  onTrackerRemoveClick(tracker: Tracker) {
+    this.remove.emit(tracker);
+    this.editMode = false;
+  }
 
 }

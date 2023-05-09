@@ -44,13 +44,10 @@
     <mat-icon>add</mat-icon>
     <span>Add</span>
   </button>
-  <button mat-menu-item>
+  <button mat-menu-item (click)="learnedSkills.editMode = !learnedSkills.editMode">
     <mat-icon>edit</mat-icon>
     <span>Edit</span>
   </button>
 </mat-menu>
-<div class="base-stat-container">
-  <app-skill-element *ngFor="let skill of charService.selectedChar.learnedSkills; first as isFirst"
-                     [displayLabel]="isFirst" [name]="skill.name" [(score)]="skill.value">
-  </app-skill-element>
-</div>
+
+<app-learned-skills #learnedSkills [char]="charService.selectedChar" (remove)="charService.removeLearnedSkill($event)"></app-learned-skills>

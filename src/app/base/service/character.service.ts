@@ -45,6 +45,11 @@ export class CharacterService {
     this.saveCharacter();
   }
 
+  public removeTracker(target: Tracker) {
+    this.selectedChar.trackers = this.selectedChar.trackers.filter(v => v !== target);
+    this.saveCharacter();
+  }
+
   public addWeapon(name: string) {
     this.selectedChar.weapons.push({
       name,
@@ -54,12 +59,22 @@ export class CharacterService {
     this.saveCharacter();
   }
 
+  public removeWeapon(target: Weapon) {
+    this.selectedChar.weapons = this.selectedChar.weapons.filter(v => v !== target);
+    this.saveCharacter();
+  }
+
   public addLearnedSkill(name: string) {
     this.selectedChar.learnedSkills.push({
       name,
       value: 0,
     });
     this.selectedChar.learnedSkills.sort((a,b) => a.name.localeCompare(b.name));
+    this.saveCharacter();
+  }
+
+  public removeLearnedSkill(target: SkillStat) {
+    this.selectedChar.learnedSkills = this.selectedChar.learnedSkills.filter(v => v !== target);
     this.saveCharacter();
   }
 

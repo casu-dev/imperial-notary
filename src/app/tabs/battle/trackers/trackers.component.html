@@ -1,4 +1,6 @@
 <div class="tracker-container">
-  <app-stat-card *ngFor="let tracker of char.trackers;" [(value)]="tracker.value"
-                 [name]="tracker.name" [numeric]="false"></app-stat-card>
+  <div *ngFor="let tracker of char.trackers;" class="grid-element">
+    <button *ngIf="editMode" class="remove-button" mat-icon-button color="warn" (click)="onTrackerRemoveClick(tracker)"><mat-icon>do_not_disturb_on</mat-icon></button>
+    <app-stat-card [(value)]="tracker.value" [name]="tracker.name" [numeric]="false"></app-stat-card>
+  </div>
 </div>
