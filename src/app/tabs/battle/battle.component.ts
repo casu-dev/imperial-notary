@@ -18,7 +18,7 @@ export class BattleComponent {
   }
 
   onHealthClick() {
-    const dialogRef = this.dialog.open(HealthDialogComponent, {position: {top: '24px'}});
+    const dialogRef = this.dialog.open(HealthDialogComponent);
     dialogRef.afterClosed().subscribe((res: HealDialogResult) => {
       if (Number.isNaN(parseInt(res.value))) {
         return;
@@ -32,8 +32,8 @@ export class BattleComponent {
     })
   }
 
-  onAddStatClick() {
-    const dialogRef = this.dialog.open(AddDialogComponent, {position: {top: '24px'}});
+  onAddTrackerClick() {
+    const dialogRef = this.dialog.open(AddDialogComponent);
     dialogRef.afterClosed().subscribe((res: {name: string}) => {
       if(res) {
         this.charService.addTracker(res.name);
@@ -42,7 +42,7 @@ export class BattleComponent {
   }
 
   onAddWeaponClick() {
-    const dialogRef = this.dialog.open(AddDialogComponent, {position: {top: '24px'}});
+    const dialogRef = this.dialog.open(AddDialogComponent);
     dialogRef.afterClosed().subscribe((res: {name: string}) => {
       if(res) {
         this.charService.addWeapon(res.name);

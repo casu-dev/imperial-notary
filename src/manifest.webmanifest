@@ -1,7 +1,7 @@
 {
   "name": "Imperial Notary",
   "short_name": "Notary",
-  "theme_color": "#000000",
+  "theme_color": "#ffc107",
   "background_color": "#303030",
   "display": "standalone",
   "orientation": "portrait-primary",

@@ -1,0 +1,4 @@
+<div class="tracker-container">
+  <app-stat-card *ngFor="let tracker of char.trackers;" [(value)]="tracker.value"
+                 [name]="tracker.name" [numeric]="false"></app-stat-card>
+</div>

@@ -1,0 +1,5 @@
+<div class="attack-list">
+  <app-attack-element *ngFor="let w of char.weapons; first as isFirst"
+                      [(damage)]="w.damage" [(hit)]="w.hit" [displayLabel]="isFirst" [name]="w.name">
+  </app-attack-element>
+</div>

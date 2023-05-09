@@ -28,7 +28,10 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {SkillElementComponent} from './base/skill-element/skill-element.component';
 import {AppRoutingModule} from './app-routing.module';
 import {StatElementComponent} from './base/stat-element/stat-element.component';
-import { AddDialogComponent } from './base/dialog/add-dialog/add-dialog.component';
+import {AddDialogComponent} from './base/dialog/add-dialog/add-dialog.component';
+import {MatMenuModule} from "@angular/material/menu";
+import {TrackersComponent} from './tabs/battle/trackers/trackers.component';
+import {WeaponsComponent} from './tabs/battle/weapons/weapons.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +48,9 @@ import { AddDialogComponent } from './base/dialog/add-dialog/add-dialog.componen
     HealthDialogComponent,
     SkillElementComponent,
     StatElementComponent,
-    AddDialogComponent
+    AddDialogComponent,
+    TrackersComponent,
+    WeaponsComponent
   ],
   imports: [
     BrowserModule,
@@ -67,9 +72,11 @@ import { AddDialogComponent } from './base/dialog/add-dialog/add-dialog.componen
     }),
     MatDialogModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

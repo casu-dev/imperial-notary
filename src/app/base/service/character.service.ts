@@ -81,6 +81,7 @@ export class CharacterService {
 
   public createCharacter(meta: MetaInfo, stats: SkillStats): CharacterStats {
     return {
+      version: 0,
       currentHealth: stats.wounds,
       meta: meta,
       skill: stats,

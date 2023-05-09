@@ -8,26 +8,41 @@
 
 <div class="headline">
   <h3>Tracker</h3>
-  <button mat-icon-button (click)="onAddStatClick()">
-    <mat-icon>add</mat-icon>
+  <button mat-icon-button [matMenuTriggerFor]="trackerMenu">
+    <mat-icon>more_vert</mat-icon>
   </button>
 </div>
+<mat-menu #trackerMenu xPosition="before">
+  <button mat-menu-item (click)="onAddTrackerClick()">
+    <mat-icon>add</mat-icon>
+    <span>Add</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon>edit</mat-icon>
+    <span>Edit</span>
+  </button>
+</mat-menu>
 
-<div class="tracker-container">
-  <app-stat-card *ngFor="let tracker of charService.selectedChar.trackers;" [(value)]="tracker.value"
-                 [name]="tracker.name" [numeric]="false"></app-stat-card>
-</div>
+<app-trackers [char]="charService.selectedChar"></app-trackers>
+
 
 
 <div class="headline">
   <h3>Weapons</h3>
-  <button mat-icon-button (click)="onAddWeaponClick()">
-    <mat-icon>add</mat-icon>
+  <button mat-icon-button [matMenuTriggerFor]="weaponsMenu">
+    <mat-icon>more_vert</mat-icon>
   </button>
 </div>
+<mat-menu #weaponsMenu xPosition="before">
+  <button mat-menu-item (click)="onAddWeaponClick()">
+    <mat-icon>add</mat-icon>
+    <span>Add</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon>edit</mat-icon>
+    <span>Edit</span>
+  </button>
+</mat-menu>
 
-<div class="attack-list">
-  <app-attack-element *ngFor="let w of charService.selectedChar.weapons; first as isFirst"
-                      [(damage)]="w.damage" [(hit)]="w.hit" [displayLabel]="isFirst" [name]="w.name">
-  </app-attack-element>
-</div>
+<app-weapons [char]="charService.selectedChar"></app-weapons>
+

@@ -32,12 +32,23 @@
                      [displayLabel]="isFirst" [name]="skill.name" [(score)]="skill.value">
   </app-skill-element>
 </div>
+
 <div class="headline">
   <h3>Learned Skill</h3>
-  <button mat-icon-button (click)="onAddLearnedSkillClick()">
-    <mat-icon>add</mat-icon>
+  <button mat-icon-button [matMenuTriggerFor]="lSkillMenu">
+    <mat-icon>more_vert</mat-icon>
   </button>
 </div>
+<mat-menu #lSkillMenu xPosition="before">
+  <button mat-menu-item (click)="onAddLearnedSkillClick()">
+    <mat-icon>add</mat-icon>
+    <span>Add</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon>edit</mat-icon>
+    <span>Edit</span>
+  </button>
+</mat-menu>
 <div class="base-stat-container">
   <app-skill-element *ngFor="let skill of charService.selectedChar.learnedSkills; first as isFirst"
                      [displayLabel]="isFirst" [name]="skill.name" [(score)]="skill.value">

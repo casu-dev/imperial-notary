@@ -21,7 +21,7 @@ export interface SkillStats {
 }
 
 export interface CharacterStats {
-
+  version: number;
   // Info
   meta: MetaInfo;
   currentHealth: number;
@@ -29,8 +29,8 @@ export interface CharacterStats {
   mods: SkillStats;
   trackers: Tracker[];
   weapons: Weapon[];
-  baseSkills: SkillStat[]
-  learnedSkills: SkillStat[]
+  baseSkills: SkillStat[];
+  learnedSkills: SkillStat[];
 
   // todo passives
 }
