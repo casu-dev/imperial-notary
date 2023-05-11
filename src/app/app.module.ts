@@ -32,10 +32,11 @@ import {AddDialogComponent} from './base/dialog/add-dialog/add-dialog.component'
 import {MatMenuModule} from "@angular/material/menu";
 import {TrackersComponent} from './tabs/battle/trackers/trackers.component';
 import {WeaponsComponent} from './tabs/battle/weapons/weapons.component';
-import { LearnedSkillsComponent } from './tabs/skills/learned-skills/learned-skills.component';
-import { HomeComponent } from './home/home.component';
-import { CreatorComponent } from './creator/creator.component';
-import { TabsParentComponent } from './tabs/parent/tabs-parent.component';
+import {LearnedSkillsComponent} from './tabs/skills/learned-skills/learned-skills.component';
+import {HomeComponent} from './home/home.component';
+import {CreatorComponent} from './creator/creator.component';
+import {TabsParentComponent} from './tabs/parent/tabs-parent.component';
+import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from "@angular/material/form-field";
 
 @NgModule({
   declarations: [
@@ -84,7 +85,12 @@ import { TabsParentComponent } from './tabs/parent/tabs-parent.component';
     AppRoutingModule,
     MatMenuModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
+      useValue: {appearance: 'outline', hideRequiredMarker: true},
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
