@@ -5,6 +5,7 @@
                     [displayLabel]="true" name="Weapon"></app-stat-element>
   <app-stat-element [(base)]="charService.selectedChar.skill.ballistic"
                     [(modification)]="charService.selectedChar.mods.ballistic" name="Ballistic"></app-stat-element>
+  <mat-divider></mat-divider>
   <app-stat-element [(base)]="charService.selectedChar.skill.strength"
                     [(modification)]="charService.selectedChar.mods.strength" name="Strength"></app-stat-element>
   <app-stat-element [(base)]="charService.selectedChar.skill.toughness"
@@ -18,6 +19,7 @@
                     [(modification)]="charService.selectedChar.mods.willpower" name="Willpower"></app-stat-element>
   <app-stat-element [(base)]="charService.selectedChar.skill.fellowship"
                     [(modification)]="charService.selectedChar.mods.fellowship" name="Fellowship"></app-stat-element>
+  <mat-divider></mat-divider>
   <app-stat-element [(base)]="charService.selectedChar.skill.attacks"
                     [(modification)]="charService.selectedChar.mods.attacks" name="Attacks"></app-stat-element>
   <app-stat-element [(base)]="charService.selectedChar.skill.wounds"

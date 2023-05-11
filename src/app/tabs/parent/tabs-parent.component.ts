@@ -12,10 +12,6 @@ export class TabsParentComponent implements OnInit {
   constructor(public charService: CharacterService, private router : Router) {
   }
 
-  saveChar() {
-    this.charService.saveCharacter();
-  }
-
   deleteChar() {
     if (confirm('Delete Character?')) {
       this.charService.deleteCharacter();
