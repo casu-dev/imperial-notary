@@ -2,25 +2,21 @@
 
 @include mat.core();
 
+$primary-palette: mat.define-palette(mat.$amber-palette);
 // Define a dark theme
 $dark-theme: mat.define-dark-theme((
   color: (
-    primary: mat.define-palette(mat.$amber-palette),
+    primary: $primary-palette,
     accent: mat.define-palette(mat.$blue-grey-palette),
-  ),
-));
-
-// Define a light theme
-$light-theme: mat.define-light-theme((
-  color: (
-    primary: mat.define-palette(mat.$indigo-palette),
-    accent: mat.define-palette(mat.$pink-palette),
   ),
 ));
 
 // Apply the dark theme by default
 @include mat.all-component-themes($dark-theme);
 
+.primary-color {
+  color: mat.get-color-from-palette($primary-palette, 500)!important;
+}
 
 /*
 // Apply the light theme only when the user prefers light themes.

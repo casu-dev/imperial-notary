@@ -9,8 +9,16 @@
 
 .nav-panel {
   height: $nav-bar-height;
+  background-color: #212121;
+  display: flex;
+  justify-content: center;
+}
+
+.link-container {
+  height: 100%;
+  width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #212121;
+  max-width: 500px;
 }

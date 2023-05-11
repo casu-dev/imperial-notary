@@ -6,6 +6,7 @@ import {InventoryComponent} from "./tabs/inventory/inventory.component";
 import {CreatorComponent} from "./creator/creator.component";
 import {HomeComponent} from "./home/home.component";
 import {TabsParentComponent} from "./tabs/parent/tabs-parent.component";
+import {PassivesComponent} from "./tabs/passives/passives.component";
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -17,10 +18,11 @@ const routes: Routes = [
     children: [
       {path: 'battle', component: BattleComponent},
       {path: 'skill', component: SkillsComponent},
-      {path: 'inv', component: InventoryComponent},
-      {path: 'create', component: CreatorComponent},
+      {path: 'inventory', component: InventoryComponent},
+      {path: 'passive', component: PassivesComponent},
     ]
   },
+  {path: '**', redirectTo: '', pathMatch: 'full'},
 ];
 
 @NgModule({

@@ -37,6 +37,7 @@ import {HomeComponent} from './home/home.component';
 import {CreatorComponent} from './creator/creator.component';
 import {TabsParentComponent} from './tabs/parent/tabs-parent.component';
 import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from "@angular/material/form-field";
+import { PassivesComponent } from './tabs/passives/passives.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from "@angular/material/form-field";
     LearnedSkillsComponent,
     HomeComponent,
     CreatorComponent,
-    TabsParentComponent
+    TabsParentComponent,
+    PassivesComponent
   ],
   imports: [
     BrowserModule,
