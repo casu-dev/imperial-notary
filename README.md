@@ -3,6 +3,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0.
 
 `ng build --configuration production --base-href "https://casu-dev.github.io/imperial-notary/"`
+
 `npx angular-cli-ghpages --dir=dist/imperial-notary`
 
 ## Development server

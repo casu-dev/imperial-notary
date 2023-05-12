@@ -1,5 +1,13 @@
+@import "../../../assets/variables";
 
+mat-sidenav-container {
+  height: 100%;
+}
 
 .filler {
   width: 100%;
+}
+
+mat-sidenav {
+  padding: 1rem;
 }

@@ -1,14 +1,24 @@
 <mat-toolbar>
   <h2>{{charService.selectedChar.meta.name}}</h2>
   <span class="filler"></span>
-  <button (click)="deleteChar()" mat-icon-button color="warn">
-    <mat-icon>delete</mat-icon>
+  <button mat-icon-button (click)="sidenav.toggle()">
+    <mat-icon>menu</mat-icon>
   </button>
 </mat-toolbar>
 
-<div class="content">
-  <router-outlet></router-outlet>
-</div>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav>
+    <mat-action-list>
+      <button mat-list-item>Save</button>
+      <button mat-list-item>Undo</button>
+    </mat-action-list>
+  </mat-sidenav>
 
-<app-nav-bar-spacer></app-nav-bar-spacer>
+  <mat-sidenav-content>
+    <div class="content">
+      <router-outlet></router-outlet>
+      <app-nav-bar-spacer></app-nav-bar-spacer>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
 <app-nav-bar></app-nav-bar>

@@ -12,7 +12,7 @@ export class TabsParentComponent implements OnInit {
   constructor(public charService: CharacterService, private router : Router) {
   }
 
-  deleteChar() {
+  deleteCharPrompt() {
     if (confirm('Delete Character?')) {
       this.charService.deleteCharacter();
       this.router.navigate(['/']).then();
