@@ -4,9 +4,9 @@
       <h2>Menu</h2>
     </mat-toolbar>
     <mat-action-list>
-      <button mat-list-item>Rename</button>
-      <button mat-list-item>Export</button>
-      <button mat-list-item>Create New</button>
+      <button mat-list-item (click)="showRenamePrompt()">Rename</button>
+      <button mat-list-item (click)="charService.exportCharacter()">Export</button>
+      <a mat-list-item routerLink="/create">Create New</a>
     </mat-action-list>
   </mat-sidenav>
 

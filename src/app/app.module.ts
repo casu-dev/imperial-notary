@@ -38,6 +38,7 @@ import {CreatorComponent} from './creator/creator.component';
 import {TabsParentComponent} from './tabs/parent/tabs-parent.component';
 import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from "@angular/material/form-field";
 import { PassivesComponent } from './tabs/passives/passives.component';
+import { RenameDialogComponent } from './base/dialog/rename-dialog/rename-dialog.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { PassivesComponent } from './tabs/passives/passives.component';
     HomeComponent,
     CreatorComponent,
     TabsParentComponent,
-    PassivesComponent
+    PassivesComponent,
+    RenameDialogComponent
   ],
   imports: [
     BrowserModule,

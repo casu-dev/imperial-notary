@@ -40,6 +40,11 @@ export class CharacterService {
     }
   }
 
+  public setName(newName: string) {
+    this.selectedChar.meta.name = newName;
+    this.saveCharacter();
+  }
+
   public addTracker(name: string) {
     this.selectedChar.trackers.push({
       name,
@@ -129,6 +134,16 @@ export class CharacterService {
       baseSkills: this.generateBaseSkillList(stats),
       learnedSkills: [],
     } as CharacterStats;
+  }
+
+  public exportCharacter() {
+    const element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(JSON.stringify(this.selectedChar)));
+    element.setAttribute('download', `${this.selectedChar.meta.name.toLowerCase().trim().replaceAll(' ', '_')}-data.json`);
+    element.style.display = 'none';
+    document.body.appendChild(element);
+    element.click();
+    setTimeout(() => document.body.removeChild(element), 100);
   }
 
   public get finalWounds() {

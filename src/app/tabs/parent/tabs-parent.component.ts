@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {CharacterService} from "../../base/service/character.service";
 import {Router} from "@angular/router";
+import {MatDialog} from "@angular/material/dialog";
+import {RenameDialogComponent} from "../../base/dialog/rename-dialog/rename-dialog.component";
 
 @Component({
   selector: 'app-tabs-parent',
@@ -9,7 +11,7 @@ import {Router} from "@angular/router";
 })
 export class TabsParentComponent implements OnInit {
 
-  constructor(public charService: CharacterService, private router : Router) {
+  constructor(public charService: CharacterService, private router: Router, private dialog: MatDialog) {
   }
 
   deleteCharPrompt() {
@@ -23,4 +25,12 @@ export class TabsParentComponent implements OnInit {
     this.charService.loadCharacter()
   }
 
+  showRenamePrompt() {
+    const dialogRef = this.dialog.open(RenameDialogComponent);
+    dialogRef.afterClosed().subscribe((res: { name: string }) => {
+      if (res?.name) {
+        this.charService.setName(res.name);
+      }
+    })
+  }
 }
