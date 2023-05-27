@@ -39,6 +39,8 @@ import {TabsParentComponent} from './tabs/parent/tabs-parent.component';
 import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from "@angular/material/form-field";
 import { PassivesComponent } from './tabs/passives/passives.component';
 import { RenameDialogComponent } from './base/dialog/rename-dialog/rename-dialog.component';
+import {MatExpansionModule} from "@angular/material/expansion";
+import { AddPassiveDialogComponent } from './base/dialog/add-passive-dialog/add-passive-dialog.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +65,8 @@ import { RenameDialogComponent } from './base/dialog/rename-dialog/rename-dialog
     CreatorComponent,
     TabsParentComponent,
     PassivesComponent,
-    RenameDialogComponent
+    RenameDialogComponent,
+    AddPassiveDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -87,7 +90,8 @@ import { RenameDialogComponent } from './base/dialog/rename-dialog/rename-dialog
     MatDialogModule,
     FormsModule,
     AppRoutingModule,
-    MatMenuModule
+    MatMenuModule,
+    MatExpansionModule
   ],
   providers: [
     {

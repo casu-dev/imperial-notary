@@ -14,7 +14,7 @@ export class SkillsComponent {
   }
 
   onAddLearnedSkillClick() {
-    const dialogRef = this.dialog.open(AddDialogComponent, {position: {top: '24px'}});
+    const dialogRef = this.dialog.open(AddDialogComponent);
     dialogRef.afterClosed().subscribe((res: {name: string}) => {
       if(res) {
         this.charService.addLearnedSkill(res.name);

@@ -1,1 +1,26 @@
-<h3>Passive Abilities</h3>
+<div class="headline">
+  <h3>Passive Abilities</h3>
+  <button mat-icon-button [matMenuTriggerFor]="passiveMenu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+</div>
+<mat-menu #passiveMenu xPosition="before">
+  <button mat-menu-item (click)="onAddPassiveClick()">
+    <mat-icon>add</mat-icon>
+    <span>Add</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon>edit</mat-icon>
+    <span>Edit</span>
+  </button>
+</mat-menu>
+<mat-accordion>
+
+  <mat-expansion-panel *ngFor="let p of charService.selectedChar.passiveAbilities">
+    <mat-expansion-panel-header>
+      <mat-panel-title>{{p.name}}</mat-panel-title>
+    </mat-expansion-panel-header>
+    {{p.description}}
+  </mat-expansion-panel>
+
+</mat-accordion>

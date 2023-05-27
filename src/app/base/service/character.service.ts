@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {CharacterStats, MetaInfo, SkillStat, SkillStats, Tracker, Weapon} from "../types";
+import {CharacterStats, MetaInfo, PassiveAbility, SkillStat, SkillStats, Tracker, Weapon} from "../types";
 
 const CHAR_SAVE_KEY = 'charStats'
 
@@ -81,6 +81,11 @@ export class CharacterService {
     this.saveCharacter();
   }
 
+  public addPassiveAbility(passive: PassiveAbility) {
+    this.selectedChar.passiveAbilities.push(passive);
+    this.saveCharacter();
+  }
+
   public removeLearnedSkill(target: SkillStat) {
     this.selectedChar.learnedSkills = this.selectedChar.learnedSkills.filter(v => v !== target);
     this.saveCharacter();
@@ -133,6 +138,7 @@ export class CharacterService {
       weapons: [] as Weapon[],
       baseSkills: this.generateBaseSkillList(stats),
       learnedSkills: [],
+      passiveAbilities: [],
     } as CharacterStats;
   }
 

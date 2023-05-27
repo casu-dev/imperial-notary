@@ -20,6 +20,7 @@ export interface SkillStats {
   fate: number;
 }
 
+
 export interface CharacterStats {
   version: number;
   // Info
@@ -31,8 +32,8 @@ export interface CharacterStats {
   weapons: Weapon[];
   baseSkills: SkillStat[];
   learnedSkills: SkillStat[];
+  passiveAbilities: PassiveAbility[];
 
-  // todo passives
 }
 
 export interface MetaInfo {
@@ -57,4 +58,9 @@ export interface Weapon {
   name: string;
   hit: string;
   damage: string;
+}
+
+export interface PassiveAbility {
+  name: string;
+  description: string;
 }
