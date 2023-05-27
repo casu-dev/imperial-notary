@@ -86,6 +86,11 @@ export class CharacterService {
     this.saveCharacter();
   }
 
+  public removePassiveAbility(passive: PassiveAbility) {
+    this.selectedChar.passiveAbilities = this.selectedChar.passiveAbilities.filter(v => v !== passive);
+    this.saveCharacter();
+  }
+
   public removeLearnedSkill(target: SkillStat) {
     this.selectedChar.learnedSkills = this.selectedChar.learnedSkills.filter(v => v !== target);
     this.saveCharacter();

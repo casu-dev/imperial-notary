@@ -12,6 +12,8 @@ import {PassiveAbility} from "../../base/types";
 })
 export class PassivesComponent {
 
+  editMode = false;
+
   constructor(private dialog: MatDialog, public charService: CharacterService) {
   }
 
@@ -22,5 +24,10 @@ export class PassivesComponent {
         this.charService.addPassiveAbility(res);
       }
     });
+  }
+
+  onRemovePassive(passive: PassiveAbility) {
+    this.charService.removePassiveAbility(passive);
+    this.editMode = false;
   }
 }

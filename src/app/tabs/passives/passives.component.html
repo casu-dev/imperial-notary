@@ -9,7 +9,7 @@
     <mat-icon>add</mat-icon>
     <span>Add</span>
   </button>
-  <button mat-menu-item>
+  <button mat-menu-item (click)="editMode = !editMode">
     <mat-icon>edit</mat-icon>
     <span>Edit</span>
   </button>
@@ -18,7 +18,11 @@
 
   <mat-expansion-panel *ngFor="let p of charService.selectedChar.passiveAbilities">
     <mat-expansion-panel-header>
-      <mat-panel-title>{{p.name}}</mat-panel-title>
+      <mat-panel-title>
+        <button *ngIf="editMode" mat-icon-button color="warn" (click)="onRemovePassive(p)">
+          <mat-icon>delete</mat-icon>
+        </button>
+        {{p.name}}</mat-panel-title>
     </mat-expansion-panel-header>
     {{p.description}}
   </mat-expansion-panel>
