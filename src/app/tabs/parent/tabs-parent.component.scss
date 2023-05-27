@@ -11,3 +11,7 @@ mat-sidenav-container {
 mat-sidenav {
   min-width: 12rem;
 }
+
+input[type="file"] {
+  display: none;
+}

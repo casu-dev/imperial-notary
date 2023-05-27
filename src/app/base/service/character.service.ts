@@ -157,6 +157,12 @@ export class CharacterService {
     setTimeout(() => document.body.removeChild(element), 100);
   }
 
+  public importCharacter(charFile: string) {
+    const parse = JSON.parse(charFile) as CharacterStats;
+    this.selectedChar = parse;
+    this.saveCharacter();
+  }
+
   public get finalWounds() {
     return this.selectedChar.skill.wounds + this.selectedChar.mods.wounds;
   }

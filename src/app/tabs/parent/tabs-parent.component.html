@@ -4,8 +4,10 @@
       <h2>Menu</h2>
     </mat-toolbar>
     <mat-action-list>
-      <button mat-list-item (click)="showRenamePrompt()">Rename</button>
-      <button mat-list-item (click)="charService.exportCharacter()">Export</button>
+      <button mat-list-item (click)="showRenamePrompt()">Rename Character</button>
+      <button mat-list-item (click)="charService.exportCharacter()">Export to File</button>
+      <button mat-list-item (click)="fileUpload.click()">Import from File</button>
+      <input #fileUpload type="file" (change)="importCharacter($event.target)" />
       <a mat-list-item routerLink="/create">Create New</a>
     </mat-action-list>
   </mat-sidenav>

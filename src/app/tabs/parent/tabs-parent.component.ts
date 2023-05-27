@@ -1,8 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {CharacterService} from "../../base/service/character.service";
 import {Router} from "@angular/router";
 import {MatDialog} from "@angular/material/dialog";
 import {RenameDialogComponent} from "../../base/dialog/rename-dialog/rename-dialog.component";
+import {MatSidenav} from "@angular/material/sidenav";
 
 @Component({
   selector: 'app-tabs-parent',
@@ -10,6 +11,8 @@ import {RenameDialogComponent} from "../../base/dialog/rename-dialog/rename-dial
   styleUrls: ['./tabs-parent.component.scss']
 })
 export class TabsParentComponent implements OnInit {
+
+  @ViewChild(MatSidenav) sidenav? : MatSidenav;
 
   constructor(public charService: CharacterService, private router: Router, private dialog: MatDialog) {
   }
@@ -23,6 +26,14 @@ export class TabsParentComponent implements OnInit {
 
   ngOnInit(): void {
     this.charService.loadCharacter()
+  }
+
+  public importCharacter(input: any) {
+    if (input?.files?.length > 0) {
+      const file = input.files[0] as File;
+      file.text().then(text => this.charService.importCharacter(text));
+    }
+    this.sidenav?.close().then();
   }
 
   showRenamePrompt() {
