@@ -1,4 +1,36 @@
 <div class="headline">
+  <h3>Active Abilities</h3>
+  <button mat-icon-button [matMenuTriggerFor]="activeMenu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+</div>
+<mat-menu #activeMenu xPosition="before">
+  <button mat-menu-item (click)="onAddActiveClick()">
+    <mat-icon>add</mat-icon>
+    <span>Add</span>
+  </button>
+  <button mat-menu-item (click)="activeEditMode = !activeEditMode">
+    <mat-icon>edit</mat-icon>
+    <span>Edit</span>
+  </button>
+</mat-menu>
+<mat-accordion>
+
+  <mat-expansion-panel *ngFor="let p of charService.selectedChar.activeAbilities">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <button *ngIf="activeEditMode" mat-icon-button color="warn" (click)="onRemoveActive(p)">
+          <mat-icon>delete</mat-icon>
+        </button>
+        {{p.name}}</mat-panel-title>
+    </mat-expansion-panel-header>
+    {{p.description}}
+  </mat-expansion-panel>
+
+</mat-accordion>
+
+
+<div class="headline">
   <h3>Passive Abilities</h3>
   <button mat-icon-button [matMenuTriggerFor]="passiveMenu">
     <mat-icon>more_vert</mat-icon>
@@ -9,7 +41,7 @@
     <mat-icon>add</mat-icon>
     <span>Add</span>
   </button>
-  <button mat-menu-item (click)="editMode = !editMode">
+  <button mat-menu-item (click)="passiveEditMode = !passiveEditMode">
     <mat-icon>edit</mat-icon>
     <span>Edit</span>
   </button>
@@ -19,7 +51,7 @@
   <mat-expansion-panel *ngFor="let p of charService.selectedChar.passiveAbilities">
     <mat-expansion-panel-header>
       <mat-panel-title>
-        <button *ngIf="editMode" mat-icon-button color="warn" (click)="onRemovePassive(p)">
+        <button *ngIf="passiveEditMode" mat-icon-button color="warn" (click)="onRemovePassive(p)">
           <mat-icon>delete</mat-icon>
         </button>
         {{p.name}}</mat-panel-title>

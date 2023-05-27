@@ -32,7 +32,8 @@ export interface CharacterStats {
   weapons: Weapon[];
   baseSkills: SkillStat[];
   learnedSkills: SkillStat[];
-  passiveAbilities: PassiveAbility[];
+  activeAbilities: Ability[];
+  passiveAbilities: Ability[];
 
 }
 
@@ -60,7 +61,7 @@ export interface Weapon {
   damage: string;
 }
 
-export interface PassiveAbility {
+export interface Ability {
   name: string;
   description: string;
 }

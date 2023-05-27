@@ -3,7 +3,7 @@ import {AddDialogComponent} from "../../base/dialog/add-dialog/add-dialog.compon
 import {AddPassiveDialogComponent} from "../../base/dialog/add-passive-dialog/add-passive-dialog.component";
 import {MatDialog} from "@angular/material/dialog";
 import {CharacterService} from "../../base/service/character.service";
-import {PassiveAbility} from "../../base/types";
+import {Ability} from "../../base/types";
 
 @Component({
   selector: 'app-passives',
@@ -12,22 +12,37 @@ import {PassiveAbility} from "../../base/types";
 })
 export class PassivesComponent {
 
-  editMode = false;
+  activeEditMode = false;
+  passiveEditMode = false;
 
   constructor(private dialog: MatDialog, public charService: CharacterService) {
   }
 
+  onAddActiveClick() {
+    const dialogRef = this.dialog.open(AddPassiveDialogComponent);
+    dialogRef.afterClosed().subscribe((res: Ability) => {
+      if(res) {
+        this.charService.addActiveAbility(res);
+      }
+    });
+  }
+
+  onRemoveActive(passive: Ability) {
+    this.charService.removeActiveAbility(passive);
+    this.activeEditMode = false;
+  }
+
   onAddPassiveClick() {
     const dialogRef = this.dialog.open(AddPassiveDialogComponent);
-    dialogRef.afterClosed().subscribe((res: PassiveAbility) => {
+    dialogRef.afterClosed().subscribe((res: Ability) => {
       if(res) {
         this.charService.addPassiveAbility(res);
       }
     });
   }
 
-  onRemovePassive(passive: PassiveAbility) {
+  onRemovePassive(passive: Ability) {
     this.charService.removePassiveAbility(passive);
-    this.editMode = false;
+    this.passiveEditMode = false;
   }
 }

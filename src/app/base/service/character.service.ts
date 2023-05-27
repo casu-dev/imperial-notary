@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {CharacterStats, MetaInfo, PassiveAbility, SkillStat, SkillStats, Tracker, Weapon} from "../types";
+import {Ability, CharacterStats, MetaInfo, SkillStat, SkillStats, Tracker, Weapon} from "../types";
 
 const CHAR_SAVE_KEY = 'charStats'
 
@@ -8,6 +8,8 @@ const CHAR_SAVE_KEY = 'charStats'
 })
 
 export class CharacterService {
+
+  private currentVersion = 1;
 
   selectedChar: CharacterStats;
   debugMeta = {
@@ -81,13 +83,23 @@ export class CharacterService {
     this.saveCharacter();
   }
 
-  public addPassiveAbility(passive: PassiveAbility) {
+  public addPassiveAbility(passive: Ability) {
     this.selectedChar.passiveAbilities.push(passive);
     this.saveCharacter();
   }
 
-  public removePassiveAbility(passive: PassiveAbility) {
+  public removePassiveAbility(passive: Ability) {
     this.selectedChar.passiveAbilities = this.selectedChar.passiveAbilities.filter(v => v !== passive);
+    this.saveCharacter();
+  }
+
+  public addActiveAbility(passive: Ability) {
+    this.selectedChar.activeAbilities.push(passive);
+    this.saveCharacter();
+  }
+
+  public removeActiveAbility(passive: Ability) {
+    this.selectedChar.activeAbilities = this.selectedChar.activeAbilities.filter(v => v !== passive);
     this.saveCharacter();
   }
 
@@ -97,6 +109,7 @@ export class CharacterService {
   }
 
   public saveCharacter(): void {
+    this.selectedChar.version = this.currentVersion;
     localStorage.setItem(CHAR_SAVE_KEY, JSON.stringify(this.selectedChar));
   }
 
@@ -115,7 +128,7 @@ export class CharacterService {
 
   public createCharacter(meta: MetaInfo, stats: SkillStats): CharacterStats {
     return {
-      version: 0,
+      version: this.currentVersion,
       currentHealth: stats.wounds,
       meta: meta,
       skill: stats,
@@ -143,6 +156,7 @@ export class CharacterService {
       weapons: [] as Weapon[],
       baseSkills: this.generateBaseSkillList(stats),
       learnedSkills: [],
+      activeAbilities: [],
       passiveAbilities: [],
     } as CharacterStats;
   }
@@ -159,7 +173,7 @@ export class CharacterService {
 
   public importCharacter(charFile: string) {
     const parse = JSON.parse(charFile) as CharacterStats;
-    this.selectedChar = parse;
+    this.selectedChar = this.updateCharVersion(parse);
     this.saveCharacter();
   }
 
@@ -252,4 +266,13 @@ export class CharacterService {
     ] as SkillStat[];
   }
 
+  private updateCharVersion(oldCharOg: CharacterStats) {
+    const oldChar = Object.assign({}, oldCharOg)
+    if (oldChar.version === 0) {
+      oldChar.version = 1;
+      oldChar.activeAbilities = [];
+    }
+
+    return oldChar;
+  }
 }
