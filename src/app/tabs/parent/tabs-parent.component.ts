@@ -28,14 +28,6 @@ export class TabsParentComponent implements OnInit {
     this.charService.loadCharacter()
   }
 
-  public importCharacter(input: any) {
-    if (input?.files?.length > 0) {
-      const file = input.files[0] as File;
-      file.text().then(text => this.charService.importCharacter(text));
-    }
-    this.sidenav?.close().then();
-  }
-
   showRenamePrompt() {
     const dialogRef = this.dialog.open(RenameDialogComponent);
     dialogRef.afterClosed().subscribe((res: { name: string }) => {

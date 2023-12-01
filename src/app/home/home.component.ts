@@ -13,13 +13,15 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (this.charService.ownsCharacter) {
-      this.router.navigate(['char', 'battle']).then();
-    }
-    else {
-      //this.router.navigate(['create']).then();
-    }
   }
 
+  public importCharacter(input: any) {
+    if (input?.files?.length > 0) {
+      const file = input.files[0] as File;
+      file.text().then(text => this.charService.importCharacter(text))
+        .then(() => this.router.navigate(['char', 'battle']))
+        .then();
+    }
+  }
 
 }
