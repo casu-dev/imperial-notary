@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
       this.router.navigate(['char', 'battle']).then();
     }
     else {
-      this.router.navigate(['create']).then();
+      //this.router.navigate(['create']).then();
     }
   }
 

@@ -4,6 +4,9 @@
     <button mat-raised-button [routerLink]="['create']">Create Character</button>
   </p>
   <p>
+    <button mat-raised-button [routerLink]="['create']">Import Character</button>
+  </p>
+  <p>
     <button mat-raised-button [routerLink]="['char', 'battle']" color="primary" *ngIf="charService.ownsCharacter">Load
       Character
     </button>
