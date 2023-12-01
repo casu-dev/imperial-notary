@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1701432201497,
+  "timestamp": 1701441862933,
   "index": "https://casu-dev.github.io/imperial-notary/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "https://casu-dev.github.io/imperial-notary/favicon.ico",
         "https://casu-dev.github.io/imperial-notary/index.html",
-        "https://casu-dev.github.io/imperial-notary/main.da5c8f140556bdfb.js",
+        "https://casu-dev.github.io/imperial-notary/main.c8997e80f3c8f7e5.js",
         "https://casu-dev.github.io/imperial-notary/manifest.webmanifest",
         "https://casu-dev.github.io/imperial-notary/polyfills.874dfcfc032abed8.js",
         "https://casu-dev.github.io/imperial-notary/runtime.86fb49abb978edc3.js",
@@ -58,9 +58,9 @@
     "https://casu-dev.github.io/imperial-notary/assets/icons/icon-96x96.png": "abe014351f0bd601556f162f49ab71fd7bcbf5ab",
     "https://casu-dev.github.io/imperial-notary/assets/icons/icon.svg": "cfa81fbfff8bb1a1ddb05853aaabed8303f9e754",
     "https://casu-dev.github.io/imperial-notary/favicon.ico": "7f3122d50608015250291582cd1a5290cae44b40",
-    "https://casu-dev.github.io/imperial-notary/index.html": "eb703800822ed0a71388ffb39ecc819fb6e8086d",
-    "https://casu-dev.github.io/imperial-notary/main.da5c8f140556bdfb.js": "054640889b20b9a7b7ddf41e29aaeda0bcb9b8a1",
-    "https://casu-dev.github.io/imperial-notary/manifest.webmanifest": "f417ec55e3304ebe4bcb7566bdf4a766a939963b",
+    "https://casu-dev.github.io/imperial-notary/index.html": "143b00a21a5b8df41d626884a76e3d026ffa09fa",
+    "https://casu-dev.github.io/imperial-notary/main.c8997e80f3c8f7e5.js": "35ff07a28e2218adc4cfe2dc09bf18a76daf254f",
+    "https://casu-dev.github.io/imperial-notary/manifest.webmanifest": "7db06b783f339474645b5e3619d13f9052ce9018",
     "https://casu-dev.github.io/imperial-notary/polyfills.874dfcfc032abed8.js": "1c5c86ae0bb826c1aeba72a28caf5d72fa3e0452",
     "https://casu-dev.github.io/imperial-notary/runtime.86fb49abb978edc3.js": "6c01d737b7f2bda3988015783a34c658ae66869a",
     "https://casu-dev.github.io/imperial-notary/styles.b23522c1a5288af8.css": "76b005a5ea942ee277827751b26c84d8e2cb08ad"
